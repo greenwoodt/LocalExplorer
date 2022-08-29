@@ -76,3 +76,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Allows for prices to the rounded added to the booking model.
+gem 'money-rails'
