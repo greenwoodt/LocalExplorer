@@ -79,3 +79,6 @@ end
 
 # Allows for prices to the rounded added to the booking model.
 gem 'money-rails'
+
+# Cloudary
+gem "cloudinary"
