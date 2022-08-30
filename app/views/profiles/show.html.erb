@@ -4,13 +4,13 @@
   <div class="show-container">
 
 
-<%if profile.front_driver_license.attached? %>
+<%if @profile.front_driver_license.attached? %>
   <%= cl_image_tag @profile.front_driver_license.key, height: 200, width: 300, crop: :fill %>
 <%end %>
-<%if profile.back_driver_license.attached? %>
+<%if @profile.back_driver_license.attached? %>
   <%= cl_image_tag @profile.back_driver_license.key, height: 200, width: 300, crop: :fill %>
 <%end %>
-<%if profile.profile_photo.attached? %>
+<%if @profile.profile_photo.attached? %>
   <%= cl_image_tag @profile.profile_photo.key, height: 200, width: 300, crop: :fill %>
 <%end %>
 
