@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+    resources :trips, only: [:index, :new, :create, :show, :destory] do
+
+      # Nested the bookings now before the controller because the two routes are linked. A booking is created after trip.
+    resources :bookings, only: [:index, :new, :create, :show, :destroy]
+  end
 end

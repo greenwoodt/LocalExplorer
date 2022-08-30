@@ -1,0 +1,9 @@
+<%= form_with model: @trip do |f| %>
+  <%= f.input :name %>
+  <%= f.input :descripiton %>
+  <%= f.input :address %>
+  <%= f.text_field :address %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.submit %>
+<% end %>
