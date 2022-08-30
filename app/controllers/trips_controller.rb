@@ -3,18 +3,18 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
+  def new
+    @trip = Trip.new
+  end
+
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.save!
   end
 
-  def new
-    @trips = Trip.new
-  end
-
   def show
-    @trips = Trip.find(params[:id])
+    @trip = Trip.find(params[:id])
   end
 
   def destroy
@@ -26,6 +26,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :description, :capacity, :difficulty, :start_date, :end_date, :address, :price)
+    params.require(:trip).permit(:name, :description, :address, :capacity, :rating, :difficulty, :start_date, :end_date, :price)
   end
 end

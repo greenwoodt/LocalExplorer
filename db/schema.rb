@@ -68,7 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_091454) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.text "address"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_trips_on_category_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
