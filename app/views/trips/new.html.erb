@@ -2,11 +2,13 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :address %>
-  <%= f.number_field :capacity %>
-  <%= f.number_field :rating %>
-  <%= f.number_field :difficulty %>
+  <%= f.input :capacity, collection: (1..4) %>
+  <%= f.input :rating, collection: (1..5) %>
+  <%= f.input :difficulty, collection: %w[Easy Medium Hard] %>
+  <%= f.association :category %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
   <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
-  <%= f.input :price %>
+  <%= f.input :price_cents %>
   <%= f.submit %>
 <% end %>

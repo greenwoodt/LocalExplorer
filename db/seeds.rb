@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+category_one = Category.new(name: "Hike")
+category_one.save!
+category_two = Category.new(name: "Walk")
+category_two.save!
+category_three = Category.new(name: "Swim")
+category_three.save!
+category_four = Category.new(name: "Sightseeing")
+category_four.save!
