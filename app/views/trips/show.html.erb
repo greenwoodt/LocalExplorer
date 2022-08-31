@@ -14,6 +14,10 @@
 </div>
 
  <%= link_to "Delete", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+  <br>
+  <br>
+  <%= link_to "BOOK A TRIP", new_trip_booking_path(@trip) %>
  <%= link_to "Back to Trips", trips_path %>
 
 

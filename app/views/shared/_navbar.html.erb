@@ -21,7 +21,7 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
           <li class="nav-item dropdown">
-            <% if current_user.profile.profile_photo.attached? %>
+            <% if current_user.profile&.profile_photo&.attached? %>
               <%= cl_image_tag current_user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
               <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
