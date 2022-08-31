@@ -1,4 +1,4 @@
-<h1>You just made a booking</h1>
+<h1>You just booked this trip!</h1>
 <div>
   <p>
     <%= @booking.trip.name %>
@@ -18,5 +18,5 @@
 <%= link_to 'Show Trips', trips_path(@trip), :class => "btn btn-primary" %>
 <br>
 
-<%= link_to "DELETE", trip_booking_path(@booking, @trip),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<%# <%= link_to "DELETE", trip_booking_path(@booking, @trip),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> %>

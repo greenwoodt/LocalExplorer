@@ -20,9 +20,9 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.delete
-    redirect_to trip_path, status: :see_other
-  end
+  # def destroy
+  #   @booking = Booking.find(params[:id])
+  #   @booking.delete
+  #   redirect_to trip_path, status: :see_other
+  # end
 end

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <div>
       <%if @trip.photo.attached? %>
         <%= cl_image_tag @trip.photo.key, height: 200, width: 300, crop: :fill %>
@@ -16,4 +14,6 @@
 
  <%= link_to "Delete", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <%= link_to "Back to Trips", trips_path %>
->>>>>>> master
+  <br>
+  <br>
+  <%= link_to "BOOK A TRIP", new_trip_booking_path(@trip) %>

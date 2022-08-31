@@ -14,8 +14,3 @@ category_three = Category.new(name: "Swim")
 category_three.save!
 category_four = Category.new(name: "Sightseeing")
 category_four.save!
-
-# Trip.create(user: User.last, category: category_one)
-# Trip.create(user: User.last, category: category_two)
-# Trip.create(user: User.last, category: category_three)
-# Trip.create(user: User.last, category: category_four)
