@@ -1,10 +1,11 @@
 <div class="trip-card">
   <% @trips.each do |trip|  %>
-    <%if trip.photo.attached? %>
+    <%if trip.photo.attached?%>
       <%= cl_image_tag trip.photo.key, height: 200, width: 300, crop: :fill %>
     <%end %>
-      <%= trip.name %>
+      <%= link_to trip.name, trip_path(trip.id) %>
       <%= trip.category.name %>
       <%= humanized_money_with_symbol(trip.price_cents) %>
   <%end %>
+
 </div>
