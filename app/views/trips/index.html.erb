@@ -1,10 +1,10 @@
-<% @trips.each do |trip|  %>
-<%if trip.photo.attached? %>
-<%= cl_image_tag trip.photo.key, height: 200, width: 300, crop: :fill %>
-<%end %>
-<%= trip.name %>
-<%= trip.capacity %>
-<%= trip.difficulty %>
-<%= trip.category.name %>
-<%= humanized_money_with_symbol(trip.price_cents) %>
-<%end %>
+<div class="trip-card">
+  <% @trips.each do |trip|  %>
+    <%if trip.photo.attached? %>
+      <%= cl_image_tag trip.photo.key, height: 200, width: 300, crop: :fill %>
+    <%end %>
+      <%= trip.name %>
+      <%= trip.category.name %>
+      <%= humanized_money_with_symbol(trip.price_cents) %>
+  <%end %>
+</div>

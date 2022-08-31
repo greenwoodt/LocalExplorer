@@ -3,7 +3,6 @@
   <%= f.input :description %>
   <%= f.input :address %>
   <%= f.input :capacity, collection: (1..4) %>
-  <%= f.input :rating, collection: (1..5) %>
   <%= f.input :difficulty, collection: %w[Easy Medium Hard] %>
   <%= f.association :category %>
   <%= f.input :photo, as: :file %>
