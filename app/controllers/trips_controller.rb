@@ -3,6 +3,10 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+  end
+
   def new
     @trip = Trip.new
   end
@@ -11,15 +15,12 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.save!
-  end
-
-  def show
-    @trip = Trip.find(params[:id])
+    redirect_to trips_path
   end
 
   def destroy
-    @trip = @trip.find(params[:id])
-    @trip.destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy!
     redirect_to trips_path, status: :see_other
   end
 
