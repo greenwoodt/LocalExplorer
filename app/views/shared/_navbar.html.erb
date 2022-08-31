@@ -20,13 +20,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-              <% if user_signed_in? && user_has_profile? %>
-                <%= link_to "Profile", profile_path, class: "dropdown-item" %>
-
               <% if user_signed_in? && current_user.profile != nil %>
                 <%= link_to "Profile", profile_path(current_user.profile.id), class: "dropdown-item" %>
-
               <% else %>
                 <%= link_to "Add Profile", new_profile_path, class: "dropdown-item" %>
               <% end %>

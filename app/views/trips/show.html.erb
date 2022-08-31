@@ -1,18 +1,16 @@
 <div>
-<% @trips.each do |trip|  %>
-    <%if trip.photo.attached? %>
-      <%= cl_image_tag trip.photo.key, height: 200, width: 300, crop: :fill %>
-    <%end %>
-      <%= trip.name %>
-      <%= trip.category.name %>
-      <%= trip.description %>
-      <%= humanized_money_with_symbol(trip.price_cents) %>
-  <%end %>
-
-    <%= #what you will need %>
+      <%if @trip.photo.attached? %>
+        <%= cl_image_tag @trip.photo.key, height: 200, width: 300, crop: :fill %>
+      <%end %>
+        <%= @trip.name %>
+        <%= @trip.category.name %>
+        <%= @trip.description %>
+        <%= humanized_money_with_symbol(@trip.price_cents) %>
 </div>
 
-<%= link_to "Delete",
-  trips_path(@trip),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+      <%# <div class="trip-costs-card">
+        <h1>Costs</h1>
+      </div> %>
+
+ <%= link_to "Delete", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "Back to Trips", trips_path %>
