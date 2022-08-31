@@ -1,4 +1,18 @@
+<div>
+<% @trips.each do |trip|  %>
+    <%if trip.photo.attached? %>
+      <%= cl_image_tag trip.photo.key, height: 200, width: 300, crop: :fill %>
+    <%end %>
+      <%= trip.name %>
+      <%= trip.category.name %>
+      <%= trip.description %>
+      <%= humanized_money_with_symbol(trip.price_cents) %>
+  <%end %>
+
+    <%= #what you will need %>
+</div>
+
 <%= link_to "Delete",
-  restaurant_path(@trip),
+  trips_path(@trip),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
