@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     authorize @profile
     @profile.destroy
-    redirect_to user_profile_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private

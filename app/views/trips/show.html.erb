@@ -20,7 +20,13 @@
   <%= link_to "BOOK A TRIP", new_trip_booking_path(@trip) %>
  <%= link_to "Back to Trips", trips_path %>
 
+<% if policy(@trip).edit? %>
+  <%= link_to "Update trip", edit_profile_path %>
+<% end %>
 
+<% if policy(@trip).destroy? %>
+  <%= link_to "Delete trip", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
 
 <%# <% if @trip.booking.exists? %>
   <%# <%= @trip.booking.each do |booking| %>

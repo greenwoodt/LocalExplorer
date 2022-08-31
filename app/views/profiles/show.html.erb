@@ -37,4 +37,7 @@
   <%= link_to "View trips", trips_path %>
 <% end %>
 
+<% if policy(@profile).destroy? %>
+  <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
 
