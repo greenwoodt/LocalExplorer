@@ -1,9 +1,11 @@
 <div class=" navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <div class= "nav-logo"><%= image_tag "LocalExplorer.png" %>
-      </div>
-    <% end %>
+    <div class="logo-div">
+      <%= link_to "#", class: "navbar-brand" do %>
+        <div class= "nav-logo"><%= image_tag "LocalExplorer.png" %>
+        </div>
+      <% end %>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#SupportedContent" aria-controls="SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,12 +14,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <%# <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
+          <%# </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <%# </li> %>
           <li class="nav-item dropdown">
             <% if current_user.profile&.profile_photo&.attached? %>
               <%= cl_image_tag current_user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
