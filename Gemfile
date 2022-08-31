@@ -86,3 +86,7 @@ gem 'money-rails'
 
 # Cloudary
 gem "cloudinary"
+
+
+#Pundit
+gem "pundit"

@@ -29,6 +29,10 @@
 </div>
 </div>
 
+<% if policy(@profile).edit? %>
+  <%= link_to "Update profile", edit_profile_path %>
+<% end %>
 
-<%= link_to "Update profile", edit_profile_path %>
-<%= link_to "View trips", trips_path %>
+<% if policy(@profile).destroy? %>
+  <%= link_to "View trips", trips_path %>
+<% end %>
