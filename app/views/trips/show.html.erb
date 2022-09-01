@@ -6,23 +6,22 @@
   <%= @trip.category.name %>
   <%= @trip.description %>
   <%= humanized_money_with_symbol(@trip.price_cents) %>
+  <h5>Location:</h5><p><%= @trip.address %></p>
 </div>
+
+<br>
+
 <div>
   <h4>Profiles</h4>
   <%= @trip.user.profile.username %>
   <%= link_to "Explorer", profile_path(@trip.user.profile.id) %>
   <%# <% if @trip.booking.exists? %>
-  <%# <%= @trip.booking.each do |booking| %>
-    <%# <%= booking.user.profile.username %>
-    <%# <%= link_to booking.user.profile.username, profile_path(booking.user.profile.id) %>
+    <%# <%= @trip.booking.each do |booking| %>
+      <%# <%= booking.user.profile.username %>
+      <%# <%= link_to booking.user.profile.username, profile_path(booking.user.profile.id) %>
+    <%# <% end  %>
   <%# <% end  %>
-<%# <% end  %>
 </div>
-
-<br>
-<br>
-<%= link_to "Book this Trip", new_trip_booking_path(@trip) %>
-<%= link_to "Back to Trips", trips_path %>
 
 <% if policy(@trip).edit? %>
   <%= link_to "Update trip", edit_trip_path %>
@@ -31,5 +30,34 @@
 <% if policy(@trip).destroy? %>
   <%= link_to "Delete trip", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
+
+  <br>
+  <br>
+<%= link_to "Back to Trips", trips_path %>
+  <br>
+
+<%= simple_form_for [@trip, @booking] do |f| %>
+  <p>We will be happy if you join</p>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<div style="width: 100%; height: 600px;">
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
+
+
+</div>
+
+<br>
+<br>
+
+
+
 
 

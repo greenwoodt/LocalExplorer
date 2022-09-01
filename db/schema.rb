@@ -105,6 +105,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
     t.integer "price_cents", default: 0, null: false
     t.bigint "category_id"
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["category_id"], name: "index_trips_on_category_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
