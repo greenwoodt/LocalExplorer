@@ -6,6 +6,7 @@
       <%= @trip.category.name %>
       <%= @trip.description %>
       <%= humanized_money_with_symbol(@trip.price_cents) %>
+      <h5>Location:</h5><p><%= @trip.address %></p>
 </div>
 <div>
 <h4>Profiles</h4>
@@ -25,6 +26,12 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+ <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 
 

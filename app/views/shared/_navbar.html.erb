@@ -1,11 +1,9 @@
 <div class=" navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <div class="logo-div">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <div class= "nav-logo"><%= image_tag "LocalExplorer.png" %>
-        </div>
-      <% end %>
-    </div>
+    <%= link_to "#", class: "navbar-brand" do %>
+      <div class= "nav-logo"><%= image_tag "LocalExplorer.png" %>
+      </div>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#SupportedContent" aria-controls="SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,8 +15,8 @@
           <%# <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
           <%# </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+          <li class="nav-item"> %>
+            <%# <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
           <li class="nav-item dropdown">
             <% if current_user.profile&.profile_photo&.attached? %>
