@@ -1,7 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
-    authorize @trip
+    @trips = policy_scope(Trip)
   end
 
   def show
@@ -19,7 +18,7 @@ class TripsController < ApplicationController
     @trip.user = current_user
     authorize @trip
     @trip.save!
-    redirect_to trip_path
+    redirect_to trip_path(@trip)
   end
 
   def edit
