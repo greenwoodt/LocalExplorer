@@ -35,13 +35,20 @@
   <br>
 <%= link_to "Back to Trips", trips_path %>
   <br>
-
-<%= simple_form_for [@trip, @booking] do |f| %>
-  <p>We will be happy if you join</p>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%# <% raise %> 
+<% if current_user.id != @trip.user.id %>
+  <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
+    <% if @trip.capacity > @trip.bookings.count %>
+      <%= simple_form_for [@trip, @booking] do |f| %>
+        <p>We will be happy if you join</p>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
+
 
 <div style="width: 100%; height: 600px;"
     data-controller="map"

@@ -1,8 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
- <%= link_to "Create a trip", new_trip_path%>
-<%= link_to "Available trips", trips_path%>
+<h1>Welcome!</h1>
+<p>Your Local Explorer Adventure awaits you!</p>
+<%# <% raise %> 
 
+<br>
+<% if !user_signed_in? %>
+  <p>Checkout out all available trips by logging in first!</p>
+  <%= link_to "Login", new_user_session_path %>
+<% else %>
+  <%= link_to "Available trips", trips_path%>
+<% end %>
+
+<br>
+
+<% if user_signed_in? && current_user.profile != nil %>
+ <%= link_to "Create a trip", new_trip_path%>
+<% else %>
+  <p>For creating a trip please add a profile!</p>
+  <%= link_to "Add Profile", new_profile_path %>
+<% end %>
+
+<br>
 
 <div class="container">
   <div class="row justify-content-center">
