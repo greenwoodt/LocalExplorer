@@ -28,6 +28,27 @@
 </div>
 </div>
 </div>
+<br>
+<h2><%#= pluralize @booking.user.profile.reviews.size, "review" %></h2>
+
+<div>
+  <% if @booking&.reviews.blank? %>
+    Be the first to leave a review for <%= @profile.username %>
+  <% else %>
+    <% @booking.reviews.each do |review| %>
+      <p><%= review.comment %></p>
+     <% end %>
+  <% end %>
+</div>
+
+<% if @booking %>
+  <%= simple_form_for([@booking, @review]) do |f| %>
+    <%= f.input :comment %>
+      <%# <%= f.input :raiting %> %>
+    <%= f.button :submit %>
+  <% end %>
+
+<% end %>
 
 
 <%= link_to "Update profile", edit_profile_path %>

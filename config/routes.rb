@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   #     # Nested the bookings now before the controller because the two routes are linked. A booking is created after trip.
     resources :bookings, only: [:index, :new, :create, :show, :destroy]
   end
-resources :trips, only: :destroy
+
+  resources :bookings do
+    resources :reviews, only: [:create, :destroy]
+  end
+  resources :trips, only: :destroy
 end

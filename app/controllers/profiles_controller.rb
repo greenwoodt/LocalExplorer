@@ -1,6 +1,9 @@
 class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
+    @review = Review.new
+    @bookings = Booking.where(user: current_user ).select {|booking| current_user.received_bookings.include? booking}
+    @booking = @bookings.last
   end
 
   def new
