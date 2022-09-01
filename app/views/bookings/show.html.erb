@@ -20,3 +20,6 @@
 <% if policy(@booking).destroy? %>
   <%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
+<br>
+<%= link_to 'Show Bookings', bookings_path(@booking), :class => "btn btn-primary" %>
+<br>

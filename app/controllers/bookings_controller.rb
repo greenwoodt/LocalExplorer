@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = policy_scope(Booking)
+
+  end
   def new
     @booking = Booking.new
     @trip = Trip.find(params[:trip_id])
@@ -12,6 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save!
+      Chatroom.create(booking: @booking)
       redirect_to trip_booking_path(@trip, @booking)
     else
       render 'new', status: :unprocessable_entity
