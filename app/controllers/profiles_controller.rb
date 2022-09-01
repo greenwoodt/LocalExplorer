@@ -1,15 +1,18 @@
 class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
+    authorize @profile
   end
 
   def new
     @profile = Profile.new
+    authorize @profile
   end
 
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
+    authorize @profile
     @profile.save
     if @profile.save!
       redirect_to profile_path(@profile)
@@ -20,18 +23,21 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+    authorize @profile
   end
 
   def update
     @profile = Profile.find(params[:id])
+    authorize @profile
     @profile.update(profile_params)
     redirect_to profile_path(@profile)
   end
 
   def destroy
     @profile = Profile.find(params[:id])
+    authorize @profile
     @profile.destroy
-    redirect_to user_profile_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private

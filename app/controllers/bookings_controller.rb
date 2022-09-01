@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @trip = Trip.find(params[:trip_id])
+    authorize @booking
   end
 
   def create
@@ -9,6 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.trip = @trip
     @booking.user = current_user
+    authorize @booking
     if @booking.save!
       redirect_to trip_booking_path(@trip, @booking)
     else
@@ -18,11 +20,13 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @booking.delete
-  #   redirect_to trip_path, status: :see_other
-  # end
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.delete
+    redirect_to trips_path, status: :see_other
+  end
 end
