@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # resources :users, only: :show do
-    resources :profiles
+  resources :profiles
   # end
 
   resources :trips, only: [:index, :show, :new, :create, :edit, :update] do
@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :destroy]
   end
   resources :trips, only: :destroy
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
