@@ -1,0 +1,22 @@
+<div>
+
+  <p>
+    <%= @trip.name %>
+  </p>
+
+  <p>
+    <%= @trip.location %>
+  </p>
+
+  <p>
+    <%= @trip.description %>
+  </p>
+
+  <p>
+    <%= @trip.price %>
+  </p>
+
+   <p>
+    <%= cl_image_tag @trip.photo.key, height: 100, width: 200, crop: :fill %>
+  </p>
+</div>
