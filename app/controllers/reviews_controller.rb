@@ -3,8 +3,9 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
+    authorize @review
     if @review.save
-      redirect profile_path(@profile)
+      redirect_to profile_path(@booking.trip.user.profile)
     else
     render 'profiles/show', status: :unprocessable_entity
    end
@@ -13,6 +14,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :raiting)
+    params.require(:review).permit(:comment, :rating)
   end
 end
