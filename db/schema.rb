@@ -57,18 +57,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "chat_rooms", force: :cascade do |t|
-    t.string "name"
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_chatrooms_on_booking_id"
   end
 
   create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "chat_room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -119,6 +121,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -127,7 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "trips"
   add_foreign_key "bookings", "users"
-  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "chatrooms", "bookings"
+  add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "bookings"

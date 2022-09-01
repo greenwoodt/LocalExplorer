@@ -1,22 +1,8 @@
-<div>
-
-  <p>
-    <%= @trip.name %>
-  </p>
-
-  <p>
-    <%= @trip.location %>
-  </p>
-
-  <p>
-    <%= @trip.description %>
-  </p>
-
-  <p>
-    <%= @trip.price %>
-  </p>
-
-   <p>
-    <%= cl_image_tag @trip.photo.key, height: 100, width: 200, crop: :fill %>
-  </p>
+<div class="trip-card">
+  <% @bookings.each do |booking|  %>
+      <p><%= booking.trip.name %></p>
+      <p><%= booking.trip.start_date %></p>
+      <p><%= booking.trip.end_date %></p><br>
+      <%= link_to "Review on Explorer", profile_path(booking.trip.user.profile) %>
+  <%end %>
 </div>
