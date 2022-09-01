@@ -1,43 +1,63 @@
 <div>
-    <%if @trip.photo.attached? %>
-      <%= cl_image_tag @trip.photo.key, height: 200, width: 300, crop: :fill %>
-    <%end %>
-      <%= @trip.name %>
-      <%= @trip.category.name %>
-      <%= @trip.description %>
-      <%= humanized_money_with_symbol(@trip.price_cents) %>
-      <h5>Location:</h5><p><%= @trip.address %></p>
+  <%if @trip.photo.attached? %>
+    <%= cl_image_tag @trip.photo.key, height: 200, width: 300, crop: :fill %>
+  <%end %>
+  <%= @trip.name %>
+  <%= @trip.category.name %>
+  <%= @trip.description %>
+  <%= humanized_money_with_symbol(@trip.price_cents) %>
+  <h5>Location:</h5><p><%= @trip.address %></p>
 </div>
+
+<br>
+
 <div>
-<h4>Profiles</h4>
-<%= @trip.user.profile.username %>
-<%= link_to "Explorer", profile_path(@trip.user.profile.id) %>
+  <h4>Profiles</h4>
+  <%= @trip.user.profile.username %>
+  <%= link_to "Explorer", profile_path(@trip.user.profile.id) %>
+  <%# <% if @trip.booking.exists? %>
+    <%# <%= @trip.booking.each do |booking| %>
+      <%# <%= booking.user.profile.username %>
+      <%# <%= link_to booking.user.profile.username, profile_path(booking.user.profile.id) %>
+    <%# <% end  %>
+  <%# <% end  %>
 </div>
 
- <%= link_to "Delete", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% if policy(@trip).edit? %>
+  <%= link_to "Update trip", edit_trip_path %>
+<% end %>
+
+<% if policy(@trip).destroy? %>
+  <%= link_to "Delete trip", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
 
   <br>
   <br>
- <%= link_to "Back to Trips", trips_path %>
+<%= link_to "Back to Trips", trips_path %>
+  <br>
+
 <%= simple_form_for [@trip, @booking] do |f| %>
-<p>We will be happy if you join</p>
-
+  <p>We will be happy if you join</p>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
 
- <div style="width: 100%; height: 600px;"
+<div style="width: 100%; height: 600px;">
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+</div>
 
 
 
-<%# <% if @trip.booking.exists? %>
-  <%# <%= @trip.booking.each do |booking| %>
-    <%# <%= booking.user.profile.username %>
-    <%# <%= link_to booking.user.profile.username, profile_path(booking.user.profile.id) %>
-  <%# <% end  %>
-<%# <% end  %>
+
+</div>
+
+<br>
+<br>
+
+
+
+
+

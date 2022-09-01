@@ -29,6 +29,15 @@
 </div>
 </div>
 
+<% if policy(@profile).edit? %>
+  <%= link_to "Update profile", edit_profile_path %>
+<% end %>
 
-<%= link_to "Update profile", edit_profile_path %>
-<%= link_to "View Trips", trips_path %>
+<% if policy(@profile).destroy? %>
+  <%= link_to "View trips", trips_path %>
+<% end %>
+
+<% if policy(@profile).destroy? %>
+  <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
+
