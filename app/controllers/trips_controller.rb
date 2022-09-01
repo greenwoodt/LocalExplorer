@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = policy_scope(Trip)
     # The `geocoded` scope filters only trips with coordinates
     @markers = @trips.geocoded.map do |trip|
       {
@@ -14,6 +14,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    authorize @trip
     @markers = [{lat: @trip.geocode[0], lng: @trip.geocode[1]}]
     @booking = Booking.new  # to be able to avoid the "new" view with a form
 
@@ -21,17 +22,32 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    authorize @trip
   end
 
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
+    authorize @trip
     @trip.save!
-    redirect_to trips_path
+    redirect_to trip_path(@trip)
+  end
+
+  def edit
+    @trip = Trip.find(params[:id])
+    authorize @trip
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    authorize @trip
+    @trip.update(trip_params)
+    redirect_to trip_path(@trip)
   end
 
   def destroy
     @trip = Trip.find(params[:id])
+    authorize @trip
     @trip.destroy!
     redirect_to trips_path, status: :see_other
   end
