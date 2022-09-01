@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save!
-      Chatroom.create(booking: @booking)
+      Chatroom.create(booking: @booking) ### TODO make sure not to have extra chatrooms
       redirect_to trip_booking_path(@trip, @booking)
     else
       render 'new', status: :unprocessable_entity
