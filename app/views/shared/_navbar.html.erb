@@ -1,6 +1,6 @@
 <div class=" navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <div class= "nav-logo"><%= image_tag "LocalExplorer.png" %>
       </div>
     <% end %>
@@ -31,6 +31,7 @@
                 <%= link_to "Add Profile", new_profile_path, class: "dropdown-item" %>
               <% end %>
               <%= link_to "Home", root_path, class: "dropdown-item" %>
+              <%= link_to 'My Bookings', bookings_path(@booking), class: "dropdown-item" %>
               <%= link_to "Messages", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
