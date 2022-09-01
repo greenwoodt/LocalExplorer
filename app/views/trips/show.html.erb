@@ -17,8 +17,14 @@
 
   <br>
   <br>
-  <%= link_to "BOOK A TRIP", new_trip_booking_path(@trip) %>
  <%= link_to "Back to Trips", trips_path %>
+<%= simple_form_for [@trip, @booking] do |f| %>
+<p>We will be happy if you join</p>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
 
 
 
