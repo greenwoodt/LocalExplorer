@@ -19,10 +19,3 @@ Trip.create(user: User.last, category: category_one)
 Trip.create(user: User.last, category: category_two)
 Trip.create(user: User.last, category: category_three)
 Trip.create(user: User.last, category: category_four)
-
-booking_one = Booking.create(user: Trip.last, price: "50")
-booking_one.save!
-booking_two = Booking.create(user: Trip.last, price: "90")
-booking_two.save!
-booking_three = Booking.create(user: Trip.last, price: "30")
-booking_three.save!
