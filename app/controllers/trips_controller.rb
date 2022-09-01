@@ -6,7 +6,7 @@ class TripsController < ApplicationController
       {
         lat: trip.latitude,
         lng: trip.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {trip: trip}),
+        info_window: render_to_string(partial: "info_window", locals: { trip: trip }),
         image_url: helpers.asset_url("logo.png")
       }
     end
@@ -14,16 +14,14 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-<<<<<<< HEAD
     authorize @trip
     @markers = [{
       lat: @trip.latitude,
       lng: @trip.longitude,
-      info_window: render_to_string(partial: "info_window", locals: {trip: @trip}),
+      info_window: render_to_string(partial: "info_window", locals: { trip: @trip }),
       image_url: helpers.asset_url("logo.png")
     }]
     @booking = Booking.new  # to be able to avoid the "new" view with a form
-
   end
 
   def new
