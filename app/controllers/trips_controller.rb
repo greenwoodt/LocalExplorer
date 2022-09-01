@@ -15,6 +15,8 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @markers = [{lat: @trip.geocode[0], lng: @trip.geocode[1]}]
+    @booking = Booking.new  # to be able to avoid the "new" view with a form
+
   end
 
   def new
