@@ -10,16 +10,17 @@
   <p>
     <%= @booking.trip.end_date %>
   </p>
-
+<%# <% raise %> %>
 
 
 </div>
 <br>
-<%= link_to 'Show Trips', trips_path(@trip), :class => "btn btn-primary" %>
+<%= link_to 'Discover Trips', trips_path(@trip), :class => "btn btn-primary" %>
+<%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-primary" %>
 <br>
 <% if policy(@booking).destroy? %>
   <%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
 <br>
-<%= link_to 'Show Bookings', bookings_path(@booking), :class => "btn btn-primary" %>
+<%= link_to 'Show my Bookings', bookings_path(@booking), :class => "btn btn-primary" %>
 <br>
