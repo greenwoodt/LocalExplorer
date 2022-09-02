@@ -4,5 +4,8 @@
       <p><%= booking.trip.start_date %></p>
       <p><%= booking.trip.end_date %></p><br>
       <%= link_to "Review on Explorer", profile_path(booking.trip.user.profile) %>
+      <%# <% if policy(@booking).destroy? %> %>
+        <%# <%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> %>
+      <%# <% end %>
   <%end %>
 </div>
