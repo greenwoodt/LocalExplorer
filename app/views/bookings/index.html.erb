@@ -4,5 +4,6 @@
       <p><%= booking.trip.start_date %></p>
       <p><%= booking.trip.end_date %></p><br>
       <%= link_to "Review on Explorer", profile_path(booking.trip.user.profile) %>
+      <%= link_to "More info", booking_path(booking) %>
   <%end %>
 </div>
