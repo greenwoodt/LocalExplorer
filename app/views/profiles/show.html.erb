@@ -51,10 +51,38 @@
   <%= link_to "Update profile", edit_profile_path %>
 <% end %>
 
-<% if policy(@profile).destroy? %>
-  <%= link_to "View trips", trips_path %>
-<% end %>
+<br>
+<br>
+
 
 <% if policy(@profile).destroy? %>
   <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
+
+<br>
+<br>
+
+<% if policy(@profile).destroy? %>
+ <%= link_to "Create a trip", new_trip_path%>
+<% end %>
+
+<br>
+<br>
+
+<% if policy(@profile).destroy? %>
+  <%= link_to "View all trips", trips_path %>
+<% end %>
+
+<br>
+<br>
+<%# <% raise %> 
+<% if policy(@profile).destroy? %>
+  <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id))%>
+<% end %>
+
+<br>
+<br>
+
+<% if policy(@profile).destroy? %>
+  <%= link_to 'My Bookings', bookings_path(@booking), class: "dropdown-item" %>
 <% end %>
