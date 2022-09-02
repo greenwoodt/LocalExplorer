@@ -44,8 +44,6 @@ gem "bootsnap", require: false
 
 gem "bootstrap"
 
-gem "simple_form", github: "heartcombo/simple_form"
-
 # Use Sass to process CSS
 gem "sassc-rails"
 

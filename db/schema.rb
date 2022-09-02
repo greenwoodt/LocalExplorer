@@ -131,6 +131,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_133159) do
   add_foreign_key "bookings", "chatrooms"
   add_foreign_key "bookings", "trips"
   add_foreign_key "bookings", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "bookings"
 end
