@@ -1,88 +1,81 @@
-<h2>This is the profile page</h2>
+<div class="banner-background">
+  <h2>This is the profile page</h2>
 
-<div class="banner">
+
   <div class="show-container">
+    <div class="info card-profile">
+      <%if @profile.front_driver_license.attached? %>
+        <%= cl_image_tag @profile.front_driver_license.key, height: 200, width: 300, crop: :fill %>
+      <%end %>
+      <%if @profile.back_driver_license.attached? %>
+        <%= cl_image_tag @profile.back_driver_license.key, height: 200, width: 300, crop: :fill %>
+      <%end %>
+      <%if @profile.profile_photo.attached? %>
+        <%= cl_image_tag @profile.profile_photo.key, height: 200, width: 300, crop: :fill %>
+      <%end %>
 
 
-<%if @profile.front_driver_license.attached? %>
-  <%= cl_image_tag @profile.front_driver_license.key, height: 200, width: 300, crop: :fill %>
-<%end %>
-<%if @profile.back_driver_license.attached? %>
-  <%= cl_image_tag @profile.back_driver_license.key, height: 200, width: 300, crop: :fill %>
-<%end %>
-<%if @profile.profile_photo.attached? %>
-  <%= cl_image_tag @profile.profile_photo.key, height: 200, width: 300, crop: :fill %>
-<%end %>
+        <h2>
+          <%= @profile.username %>
+        </h2>
+      <h5><%= @profile.first_name %></h5>
+      <h5><%= @profile.last_name %></h5>
+      <h5><%= @profile.description %></h5>
+    </div>
+  </div>
 
-  <div class="info">
-      <h2>
-        <%= @profile.username %>
-      </h2>
+  <br>
+  <h2><%#= pluralize @booking.user.profile.reviews.size, "review" %></h2>
 
-
-<h5><%= @profile.first_name %></h5>
-<h5><%= @profile.last_name %></h5>
-<h5><%= @profile.description %></h5>
-
-
-</div>
-</div>
-</div>
-<br>
-<h2><%#= pluralize @booking.user.profile.reviews.size, "review" %></h2>
-
-<div>
-      <% @reviews.each do |review| %>
-        <p><%= review.comment %></p>
+  <div>
+        <% @reviews.each do |review| %>
+          <p><%= review.comment %></p>
+        <% end %>
+    <% if @booking %>
+      <%= simple_form_for([@booking, @review]) do |f| %>
+        <%= f.input :comment %>
+          <%# <%= f.input :raiting %>
+        <%= f.button :submit %>
       <% end %>
-  <% if @booking %>
-    <%= simple_form_for([@booking, @review]) do |f| %>
-      <%= f.input :comment %>
-        <%# <%= f.input :raiting %>
-      <%= f.button :submit %>
     <% end %>
+  </div>
+
+  <% if policy(@profile).edit? %>
+    <%= link_to "Update profile", edit_profile_path, class: "btn btn-success" %>
   <% end %>
 
+  <br>
+  <br>
+
+  <% if policy(@profile).destroy? %>
+    <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-success"%>
+  <% end %>
+
+  <br>
+  <br>
+
+  <% if policy(@profile).destroy? %>
+  <%= link_to "Create a trip", new_trip_path, class: "btn btn-success"%>
+  <% end %>
+
+  <br>
+  <br>
+
+  <% if policy(@profile).destroy? %>
+    <%= link_to "View all trips", trips_path, class: "btn btn-success" %>
+  <% end %>
+
+  <br>
+  <br>
+  <%# <% raise %>
+  <% if policy(@profile).destroy? %>
+    <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id)), class: "btn btn-success"%>
+  <% end %>
+
+  <br>
+  <br>
+
+  <% if policy(@profile).destroy? %>
+    <%= link_to 'My Bookings', bookings_path(@booking), class: "dropdown-item btn btn-success" %>
+  <% end %>
 </div>
-
-
-
-<% if policy(@profile).edit? %>
-  <%= link_to "Update profile", edit_profile_path %>
-<% end %>
-
-<br>
-<br>
-
-
-<% if policy(@profile).destroy? %>
-  <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<% end %>
-
-<br>
-<br>
-
-<% if policy(@profile).destroy? %>
- <%= link_to "Create a trip", new_trip_path%>
-<% end %>
-
-<br>
-<br>
-
-<% if policy(@profile).destroy? %>
-  <%= link_to "View all trips", trips_path %>
-<% end %>
-
-<br>
-<br>
-<%# <% raise %> 
-<% if policy(@profile).destroy? %>
-  <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id))%>
-<% end %>
-
-<br>
-<br>
-
-<% if policy(@profile).destroy? %>
-  <%= link_to 'My Bookings', bookings_path(@booking), class: "dropdown-item" %>
-<% end %>

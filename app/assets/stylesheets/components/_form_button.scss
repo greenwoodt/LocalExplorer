@@ -1,0 +1,15 @@
+.form-button {
+  background: linear-gradient(#4abe77, #168440);
+  color: white;
+  border-radius: 5px;
+  height: 25px;
+  width: 40px;
+  font-family: Nunito, Helvetica, sans-serif;
+}
+
+.form-button:hover {
+  background-color: #168440;
+  color: white;
+  height: 30px;
+  width: 50px;
+}
