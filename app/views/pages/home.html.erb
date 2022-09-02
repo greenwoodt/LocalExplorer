@@ -14,7 +14,7 @@
 <% else %>
   <%= link_to "Available trips", trips_path%>
   <br>
-  <%= link_to "Create a trip", new_trip_path %> 
+  <%= link_to "Create a trip", new_trip_path %>
   <br>
   <div class="container">
     <div class="row justify-content-center">
@@ -25,6 +25,5 @@
       placeholder: "Find a trip"%>
         <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
-    </div>
   </div>
 <% end %>
