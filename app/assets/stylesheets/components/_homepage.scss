@@ -1,0 +1,25 @@
+.container-welcome {
+  width: 500px;
+  text-align: center;
+  // color: #F7F6DC;
+  color: #969336;
+//   position:relative;
+}
+
+
+
+.button {
+  background: linear-gradient(#33b565, #168440);
+  color: white;
+  border-radius: 5px;
+  height: 15px;
+  width: 25px;
+  font-family: Nunito, Helvetica, sans-serif;
+}
+
+.button:hover {
+  background-color: #168440;
+  color: white;
+  height: 20px;
+  width: 30px;
+}
