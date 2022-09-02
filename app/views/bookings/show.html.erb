@@ -16,6 +16,7 @@
 </div>
 <br>
 <%= link_to 'Show Trips', trips_path(@trip), :class => "btn btn-primary" %>
+<%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-primary" %>
 <br>
 <% if policy(@booking).destroy? %>
   <%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>

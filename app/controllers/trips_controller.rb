@@ -24,6 +24,7 @@ class TripsController < ApplicationController
       info_window: render_to_string(partial: "info_window", locals: { trip: @trip }),
       image_url: helpers.asset_url("logo.png")
     }]
+    @chatroom = Booking.where(trip: @trip).first&.chatroom
     @booking = Booking.new  # to be able to avoid the "new" view with a form
   end
 

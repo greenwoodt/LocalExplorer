@@ -65,20 +65,25 @@ trip4 = Trip.new(name: "Trip 4", description: "Trip 4", capacity: 3, price_cents
 trip4.save!
 
 
+chatroom1 = Chatroom.create()
+chatroom2 = Chatroom.create()
+chatroom3 = Chatroom.create()
+chatroom4 = Chatroom.create()
+
 #Bookings
-booking1 = Booking.new(trip: trip1, user: user2)
+booking1 = Booking.new(trip: trip1, user: user2, chatroom: chatroom1)
 booking1.save!
-booking2 = Booking.new(trip: trip1, user: user3)
+booking2 = Booking.new(trip: trip1, user: user3, chatroom: chatroom1)
 booking2.save!
-booking3 = Booking.new(trip: trip1, user: user4)
+booking3 = Booking.new(trip: trip1, user: user4, chatroom: chatroom1)
 booking3.save!
-booking4 = Booking.new(trip: trip1, user: user5)
+booking4 = Booking.new(trip: trip1, user: user5, chatroom: chatroom1)
 booking4.save!
-booking5 = Booking.new(trip: trip2, user: user6)
+booking5 = Booking.new(trip: trip2, user: user6, chatroom: chatroom2)
 booking5.save!
-booking8 = Booking.new(trip: trip2, user: user1)
+booking8 = Booking.new(trip: trip2, user: user1, chatroom: chatroom2)
 booking8.save!
-booking6 = Booking.new(trip: trip3, user: user7)
+booking6 = Booking.new(trip: trip3, user: user7, chatroom: chatroom3)
 booking6.save!
-booking7 = Booking.new(trip: trip4, user: user8)
+booking7 = Booking.new(trip: trip4, user: user8, chatroom: chatroom4)
 booking7.save!

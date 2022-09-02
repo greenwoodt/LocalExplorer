@@ -1,4 +1,4 @@
 class Chatroom < ApplicationRecord
-  belongs_to :booking 
+  has_many :bookings
   has_many :messages
 end
