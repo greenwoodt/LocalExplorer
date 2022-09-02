@@ -7,6 +7,8 @@ class ChatroomPolicy < ApplicationPolicy
 
   end
   def show?
-    user.bookings.include?(record.booking)
+    true
+    # DONT DELETE
+    # user.bookings.include?(record.booking) || record.booking.trip.user == user
   end
 end
