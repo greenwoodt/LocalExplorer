@@ -2,9 +2,15 @@
   <%if @trip.photo.attached? %>
     <%= cl_image_tag @trip.photo.key, height: 200, width: 300, crop: :fill %>
   <%end %>
-  <%= @trip.name %>
+  <h1><%= @trip.name %></h1>
+  <br>
+  <p>Category:</p>
   <%= @trip.category.name %>
+  <br>
+  <p>Description:</p>
   <%= @trip.description %>
+  <br>
+  <p>Costs:</p>
   <%= humanized_money_with_symbol(@trip.price_cents) %>
   <h5>Location:</h5><p><%= @trip.address %></p>
 </div>
@@ -13,14 +19,18 @@
 
 <div>
   <h4>Profiles</h4>
-  <%= @trip.user.profile.username %>
-  <%= link_to "Explorer", profile_path(@trip.user.profile.id) %>
-  <%# <% if @trip.booking.exists? %>
-    <%# <%= @trip.booking.each do |booking| %>
-      <%# <%= booking.user.profile.username %>
-      <%# <%= link_to booking.user.profile.username, profile_path(booking.user.profile.id) %>
-    <%# <% end  %>
-  <%# <% end  %>
+  <p>Your Local Exporer:</p>
+  <%= link_to @trip.user.profile.username, profile_path(@trip.user.profile.id) %>
+  <%# <% raise %> 
+  <br>
+  <br>
+  <p>Your Tripmates:</p>
+  <% if @trip.bookings.exists? %>
+    <% @trip.bookings.map {|b|b.user}.map {|u| u.profile}.each do |profile|%>
+    <%= link_to profile.username, profile_path(profile) %>
+    <br>
+    <% end %>
+  <% end %>
 </div>
 
 <% if policy(@trip).edit? %>
@@ -40,11 +50,13 @@
   <br>
 <%= link_to "Back to Trips", trips_path %>
   <br>
+  <br>
+  <%# <% raise %> 
 <% if current_user.id != @trip.user.id %>
   <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
     <% if @trip.capacity > @trip.bookings.count %>
       <%= simple_form_for [@trip, @booking] do |f| %>
-        <p>We will be happy if you join</p>
+        <h4>Join us!</h4>
         <div class="form-actions">
           <%= f.button :submit %>
         </div>
