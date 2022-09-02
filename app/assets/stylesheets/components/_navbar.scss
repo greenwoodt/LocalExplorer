@@ -12,6 +12,20 @@
 }
 
 
+
+
+
+
 .nav-logo {
-  position: relative; left: 500px;
+/*   position: relative; left: 500px;
+ */}
+
+@media screen and (max-width: 900px) {
+  .nav-logo {
+    position: unset;
+    left: unset;
+  }
+
+  .navbar-brand {
+  }
 }
