@@ -31,11 +31,15 @@
   <%= link_to "Delete trip", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
 
+<% if @trip.user == current_user && @chatroom %>
+  <%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-primary" %>
+<% end %>
+
+
   <br>
   <br>
 <%= link_to "Back to Trips", trips_path %>
   <br>
-  <%# <% raise %> 
 <% if current_user.id != @trip.user.id %>
   <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
     <% if @trip.capacity > @trip.bookings.count %>

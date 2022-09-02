@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_092129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "chatroom_id"
+    t.index ["chatroom_id"], name: "index_bookings_on_chatroom_id"
     t.index ["trip_id"], name: "index_bookings_on_trip_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -58,10 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.bigint "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_chatrooms_on_booking_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -128,9 +128,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_095606) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "chatrooms"
   add_foreign_key "bookings", "trips"
   add_foreign_key "bookings", "users"
-  add_foreign_key "chatrooms", "bookings"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"

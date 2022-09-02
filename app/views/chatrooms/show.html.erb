@@ -19,3 +19,9 @@
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
+
+<% if current_user == @chatroom.bookings.last.trip.user %>
+  <%= link_to "Back to trip", trip_path(@chatroom.bookings.last.trip) %>
+<% else %>
+  <%= link_to "Back to booking", booking_path(@booking) %>
+<% end %>
