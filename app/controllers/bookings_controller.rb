@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
+    @chatroom = Chatroom.new
 
   end
   def new
