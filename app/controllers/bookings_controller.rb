@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
+    @chatroom = Chatroom.new
 
   end
   def new
@@ -42,6 +43,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.delete
-    redirect_to trips_path, status: :see_other
+    redirect_to bookings_path(@booking), status: :see_other
   end
 end
