@@ -1,26 +1,28 @@
-<h1>You just booked this trip!</h1>
-<div>
-  <p>
-    <%= @booking.trip.name %>
-  </p>
-  <p>
-    <%= @booking.trip.start_date %>
-  </p>
+<div class="booking-show-container">
+  <h1 id="booking-show-title">Congratulations! You just booked this trip!</h1>
+    <div class="booking-show-card">
+        <% if @booking.trip.photo.attached? %>
+          <%= cl_image_tag @booking.trip.photo.key%>
+        <% end %>
+        <div class="card-showbooking-info">
+          <h2><%= @booking.trip.name %></h2>
+          <br>
+          <p>Trip start-date:</p>
+          <%= @booking.trip.start_date %>
+          <br>
+          <p>Trip end-date:</p>
+          <%= @booking.trip.end_date %>
+        </div>
+    </div>
+  <div class="booking-show-buttons-card">
+    <ul class="booking-show-inline">
+    <li> <%= link_to 'Discover Trips', trips_path(@trip), :class => "btn btn-success" %> </li>
+    <%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
 
-  <p>
-    <%= @booking.trip.end_date %>
-  </p>
-<%# <% raise %> %>
-
-
+    <% if policy(@booking).destroy? %>
+   <li><%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-success"%> </li>
+    <% end %>
+   <li><%= link_to 'Show my Bookings', bookings_path(@booking), :class => "btn btn-success" %> </li>
+    </ul>
+  </div>
 </div>
-<br>
-<%= link_to 'Discover Trips', trips_path(@trip), :class => "btn btn-primary" %>
-<%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-primary" %>
-<br>
-<% if policy(@booking).destroy? %>
-  <%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<% end %>
-<br>
-<%= link_to 'Show my Bookings', bookings_path(@booking), :class => "btn btn-primary" %>
-<br>
