@@ -110,6 +110,74 @@
   align-items: flex-start;
 }
 
+// cards for trip index page
+
+.card-trip-index {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  text-decoration: none;
+}
+.card-index-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-index-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 200px;
+  text-decoration: none;
+}
+
+.tag-category {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.tag-pink {
+  background-color: #588157;
+}
+
+.card-index-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+  text-decoration: none;
+}
+.user-trip-index {
+  display: flex;
+  margin-top: auto;
+
+}
+
+.user-trip-index img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.user-index-info h5 {
+  margin: 0;
+}
+.user-index-info small {
+  color: #545d7a;
+}
+.calendar {
+  width: 10px;
+  height: 10px;
+}
 .card-user-showtrip {
   background-color: white;
   width: 100%;
