@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to profile_path(@booking.trip.user.profile)
     else
-    render 'profiles/show', status: :unprocessable_entity
-   end
+      render 'profiles/show', status: :unprocessable_entity
+    end
   end
 
   private
