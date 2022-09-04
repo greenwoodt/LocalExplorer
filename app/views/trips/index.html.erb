@@ -20,7 +20,12 @@
         <%end %>
       </div>
       <div class="card-index-body">
-        <span class="tag-category tag-pink"><%= trip.category.name %></span>
+        <span class="tag-category tag-pink"><%= trip.category.name %></span><div>
+              <%# <i class="fa-thin fa-calendar-days"></i> %>
+              <img src="/app/images/calendar.png" alt="">
+              <small>Date:<%= trip.start_date.strftime("%m/%d/%Y") %> - </small>
+              <small><%= trip.end_date.strftime("%m/%d/%Y") %></small>
+            </div>
         <h4>
           <%= link_to trip.name, trip_path(trip.id) %>
         </h4>
@@ -30,24 +35,28 @@
         <div class="user-trip-index">
          <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
               <%# <%= cl_image_tag trip.user.profile.profile_photo.key, class: "user-trip-index-img" %>
-            <h5><%= link_to trip.user.profile.username, profile_path(trip.user.profile) %></h5>
-            <small>Your Local Explorer</small>
+            <div class="user-index-info">
+              <h5><%= link_to trip.user.profile.username, profile_path(trip.user.profile) %></h5>
+              <small>Your Local Explorer</small>
+            </div>
+
           </div>
         </div>
     </div>
     <%end %>
   </div>
 
-<div class ="map-container">
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  <div class ="map-container">
+    <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
+
 </div>
-
-
-  </div>
 <br>
 
 

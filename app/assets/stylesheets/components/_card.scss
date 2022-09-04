@@ -118,6 +118,7 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
+  text-decoration: none;
 }
 .card-index-header img {
   width: 100%;
@@ -130,7 +131,8 @@
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
-  min-height: 250px;
+  min-height: 200px;
+  text-decoration: none;
 }
 
 .tag-category {
@@ -151,10 +153,12 @@
 .card-index-body p {
   font-size: 13px;
   margin: 0 0 40px;
+  text-decoration: none;
 }
 .user-trip-index {
   display: flex;
   margin-top: auto;
+
 }
 
 .user-trip-index img {
@@ -168,4 +172,8 @@
 }
 .user-index-info small {
   color: #545d7a;
+}
+.calendar {
+  width: 10px;
+  height: 10px;
 }
