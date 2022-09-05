@@ -10,17 +10,20 @@
 // }
 
 
-.card-profile {
-  width: 350px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  flex-grow: 1;
-}
+// .card-profile {
+//   width: 350px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   border-radius: 10px;
+//   margin-top: 10px;
+//   margin-left: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   flex-grow: 1;
+// }
+
+
 
 // .card-product {
 //   overflow: hidden;
@@ -115,7 +118,6 @@
 }
 
 // cards for trip index page
-
 .card-trip-index {
   margin: 10px;
   background-color: #fff;
@@ -125,12 +127,12 @@
   width: 300px;
   text-decoration: none;
 }
-.card-index-header img {
+.card-trip-index-header img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-.card-index-body {
+.card-trip-index-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,10 +141,14 @@
   min-height: 200px;
 
 }
-.card-index-body a {
+.card-trip-index-body a {
   text-decoration: none;
 }
-.tag-category {
+.container-trip-tags {
+  display: flex;
+  justify-content: space-between;
+}
+.tag-trip-category {
   background: #cccccc;
   border-radius: 50px;
   font-size: 12px;
@@ -153,11 +159,20 @@
   cursor: pointer;
 }
 
-.tag-pink {
-  background-color: #588157;
+.tag-dark {
+  background-color: #ca780c;
+}
+.tag-light {
+  background-color: #188686;
+}
+.tag-middle {
+  background-color: #eca2dc;
+}
+.tag-green {
+  background-color: #eb4359;
 }
 
-.card-index-body p {
+.card-trip-index-body p {
   font-size: 13px;
   margin: 0 0 40px;
   text-decoration: none;
@@ -174,16 +189,18 @@
   height: 40px;
   margin-right: 10px;
 }
-.user-index-info h5 {
+.user-trip-index-info h5 {
   margin: 0;
 }
-.user-index-info small {
+.user-trip-index-info small {
   color: #545d7a;
 }
-.calendar {
-  width: 10px;
-  height: 10px;
+.difficulty {
+  width: 30px;
+  height: 30px;
 }
+
+// trip show page
 .card-user-showtrip {
   background-color: white;
   width: 100%;
@@ -198,7 +215,6 @@
   align-items: flex-start;
   margin-top: 15px;
 }
-
 .mates-card {
   padding: 16px;
   display: flex;
