@@ -92,6 +92,10 @@
   position: relative;
 }
 
+.card-showtrip-info-text {
+  overflow: overlay;
+}
+
 
 .card-profiles-showtrip {
   background-color: white;
@@ -230,6 +234,11 @@
   }
 }
 
+.grid-mates-showtrip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
 
 .local-explorer-card {
   padding: 16px;
