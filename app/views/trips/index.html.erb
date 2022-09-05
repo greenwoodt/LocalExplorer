@@ -7,33 +7,64 @@
       placeholder: "Find a trip"%>
         <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
-  </div>
-<br>
-  <%= link_to "Create a trip", new_trip_path %>
+
+<%= link_to "Create a trip", new_trip_path %>
   <br>
 
-  <% @trips.each do |trip|  %>
-    <div class="card" style="width: 18rem;">
-      <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-      <div class="card-body">
-        <p class="card-text">
-          <%= link_to trip.name, trip_path(trip.id) %>
-          <%= trip.category.name %>
-          <%= humanized_money_with_symbol(trip.price_cents) %>
-        </p>
+  <div class="container-index-trip">
+   <% @trips.each do |trip|  %>
+    <div class="card-trip-index">
+      <div class="card-index-header">
+        <%if trip.photo.attached?%>
+          <%= link_to cl_image_tag(trip.photo.key), trip_path(trip.id), height: 200, width: 300, crop: :fill, class: "card-img-top" %>
+        <%end %>
       </div>
+      <div class="card-index-body">
+        <span class="tag-category tag-pink"><%= trip.category.name %></span><div>
+              <%# <i class="fa-thin fa-calendar-days"></i> %>
+              <img src="/app/images/calendar.png" alt="">
+              <small>Date:<%= trip.start_date.strftime("%m/%d/%Y") %> - </small>
+              <small><%= trip.end_date.strftime("%m/%d/%Y") %></small>
+            </div>
+        <h4>
+          <%= link_to trip.name, trip_path(trip.id) %>
+        </h4>
+        <p>
+          Dashboard Design Guidelines
+        </p>
+        <div class="user-trip-index">
+         <%# <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" /> %>
+           <% if trip.user.profile.profile_photo.attached? %>
+            <%= cl_image_tag trip.user.profile.profile_photo.key, class: "avatar dropdown-toggle", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+              <%# <%= cl_image_tag trip.user.profile.profile_photo.key, class: "user-trip-index-img" %>
+            <div class="user-index-info">
+              <h5><%= link_to trip.user.profile.username, profile_path(trip.user.profile) %></h5>
+              <small>Your Local Explorer</small>
+            </div>
+
+          </div>
+        </div>
     </div>
-  <%end %>
-
-
-
-<div class ="map-container">
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <%end %>
   </div>
+
+
+  <div class ="map-container">
+    <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+
 </div>
+<br>
+
+
 <%# carusel %>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
