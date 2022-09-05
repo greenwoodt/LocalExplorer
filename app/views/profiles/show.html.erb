@@ -3,16 +3,19 @@
 
 
   <div class="show-container">
-    <div class="info card-profile">
+    <div class="card-profile">
       <%if @profile.front_driver_license.attached? %>
         <%= cl_image_tag @profile.front_driver_license.key, height: 200, width: 300, crop: :fill %>
-      <%end %>
-      <%if @profile.back_driver_license.attached? %>
-        <%= cl_image_tag @profile.back_driver_license.key, height: 200, width: 300, crop: :fill %>
-      <%end %>
-      <%if @profile.profile_photo.attached? %>
+      <% end %>
+       <%if @profile.back_driver_license.attached? %>
+         <%= cl_image_tag @profile.back_driver_license.key, height: 200, width: 300, crop: :fill %>
+       <%end %>
+       <div class="card-profile-infos">
+       <div class="card-profile-user">
+       <%if @profile.profile_photo.attached? %>
         <%= cl_image_tag @profile.profile_photo.key, height: 200, width: 300, crop: :fill %>
-      <%end %>
+       <%end%>
+       </div>
 
 
         <h2>
@@ -20,12 +23,13 @@
         </h2>
       <h5><%= @profile.first_name %></h5>
       <h5><%= @profile.last_name %></h5>
-      <h5><%= @profile.description %></h5>
+      <p><%= @profile.description %></p>
+      </div>
     </div>
   </div>
 
   <br>
-  <h2><%#= pluralize @booking.user.profile.reviews.size, "review" %></h2>
+  <h2><%= pluralize @booking.user.profile.reviews.size, "review" %></h2>
 
   <div>
         <% @reviews.each do |review| %>

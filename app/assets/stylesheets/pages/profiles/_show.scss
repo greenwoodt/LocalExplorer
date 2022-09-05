@@ -1,0 +1,52 @@
+// <div class="profile-card" style="width: 18rem;">
+//   <img class="profile-card-img-top" src="..." alt="Card image cap">
+//   <div class="profile-card-body">
+//     <h5 class="profile-card-title">Card title</h5>
+//     <p class="profile-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" class="btn btn-primary">Go somewhere</a>
+//   </div>
+// </div>
+
+
+.card-profile {
+  width: 500px;
+  height: 400px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+  display: flex;
+
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.card-profile {
+  img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 16px;
+    top: -20px;
+  }
+}
+
+.card-profile h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profile p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-profile .card-profile-infos {
+  padding: 16px;
+}
