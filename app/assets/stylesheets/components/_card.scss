@@ -185,6 +185,7 @@
   width: 40px;
   height: 40px;
   margin-right: 10px;
+  position: relative;
 }
 .user-trip-index-info h5 {
   margin: 0;
@@ -192,10 +193,23 @@
 .user-trip-index-info small {
   color: #545d7a;
 }
+.hover-text {
+  display: none;
+  position: absolute;
+  font-style: italic;
+}
 .difficulty {
   width: 30px;
   height: 30px;
 }
+.difficulty:hover + p {
+  display: block;
+}
+
+// .hover-text:hover {
+//   display: block;
+//   background-color: #ca780c;
+// }
 
 // trip show page
 .card-user-showtrip {
