@@ -20,17 +20,28 @@
         <%end %>
       </div>
       <div class="card-index-body">
-        <span class="tag-category tag-pink"><%= trip.category.name %></span><div>
-              <%# <i class="fa-thin fa-calendar-days"></i> %>
-              <img src="/app/images/calendar.png" alt="">
-              <small>Date: <%= trip.start_date.strftime("%m/%d/%Y") %> - </small>
-              <small><%= trip.end_date.strftime("%m/%d/%Y") %></small>
-            </div>
+        <div class = "container-trip-tags">
+          <% if trip.category.name == "Hike" %>
+            <div><span class="tag-category tag-dark"><%= trip.category.name %></span></div>
+          <% elsif trip.category.name == "Swim" %>
+            <div><span class="tag-category tag-middle"><%= trip.category.name %></span></div>
+          <% elsif trip.category.name == "Sightseeing" %>
+            <div><span class="tag-category tag-green"><%= trip.category.name %></span></div>
+          <% elsif trip.category.name == "Walk" %>
+            <div><span class="tag-category tag-light"><%= trip.category.name %></span></div>
+          <% end %>
+          <div id="dificulty"><%= image_tag "low.png", class: "dificulty" %></div>
+        </div>
+
+        <div>
+          <small>Date: <%= trip.start_date.strftime("%m/%d/%Y") %> - </small>
+          <small><%= trip.end_date.strftime("%m/%d/%Y") %></small>
+        </div>
         <h4>
           <%= link_to trip.name, trip_path(trip.id) %>
         </h4>
         <p>
-          Dashboard Design Guidelines
+          <%= trip.description %>
         </p>
         <div class="user-trip-index">
          <%# <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" /> %>

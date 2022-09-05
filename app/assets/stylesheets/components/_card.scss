@@ -138,6 +138,10 @@
 .card-index-body a {
   text-decoration: none;
 }
+.container-trip-tags {
+  display: flex;
+  justify-content: space-between;
+}
 .tag-category {
   background: #cccccc;
   border-radius: 50px;
@@ -148,9 +152,21 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+#dificulty {
+  justify-content: flex-end;
+}
 
-.tag-pink {
-  background-color: #588157;
+.tag-dark {
+  background-color: #ca780c;
+}
+.tag-light {
+  background-color: #188686;
+}
+.tag-middle {
+  background-color: #eca2dc;
+}
+.tag-green {
+  background-color: #eb4359;
 }
 
 .card-index-body p {
@@ -176,9 +192,9 @@
 .user-index-info small {
   color: #545d7a;
 }
-.calendar {
-  width: 10px;
-  height: 10px;
+.dificulty {
+  width: 30px;
+  height: 30px;
 }
 .card-user-showtrip {
   background-color: white;
@@ -194,7 +210,7 @@
   align-items: flex-start;
   margin-top: 15px;
 }
-
+// trip show page
 .mates-card {
   padding: 16px;
   display: flex;
