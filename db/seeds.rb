@@ -64,7 +64,6 @@ trip3.save!
 trip4 = Trip.new(name: "Trip 4", description: "Trip 4", capacity: 3, price_cents: 15 , category: category4, difficulty: "Easy", start_date: "24.09.2022", end_date: "26.09.2022", user: user4, address: "Girona")
 trip4.save!
 
-
 chatroom1 = Chatroom.create()
 chatroom2 = Chatroom.create()
 chatroom3 = Chatroom.create()

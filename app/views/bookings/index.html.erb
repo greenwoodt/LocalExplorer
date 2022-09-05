@@ -1,14 +1,11 @@
 <div class="trip-card">
   <% @bookings.each do |booking|  %>
       <p><%= booking.trip.name %></p>
-      <p><%= booking.trip.start_date %></p>
-      <p><%= booking.trip.end_date %></p><br>
+      <p><%= booking.trip.start_date.to_date %></p>
+      <p><%= booking.trip.end_date.to_date %></p><br>
       <%= link_to "Review on Explorer", profile_path(booking.trip.user.profile) %>
-      <%# <% if policy(@booking).destroy? %>
-        <%# <%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> %>
-      <%# <% end %>
-      <%= link_to "More info", booking_path(booking) %>
 
+      <%= link_to "More info", booking_path(booking)%>
       <%= link_to 'open chat', chatroom_path(booking.chatroom), :class => "btn btn-primary" %>
   <%end %>
 </div>
