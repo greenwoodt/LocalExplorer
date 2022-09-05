@@ -1,23 +1,26 @@
-// Graphical variables
+// Graphical variables.
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-// External libraries
+// External libraries.
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
-// Your CSS partials
+// Your CSS partials.
 @import "components/index";
 @import "pages/index";
 
-// CSS for the date picker
+// CSS for the date picker.
 @import "flatpickr/dist/flatpickr";
 
-//CSS of components pages
+//CSS of components pages.
 @import "components/card";
 
+// CSS of trips pages.
 @import "pages/trips/index";
-//CSS of booking pages
+
+//CSS of booking pages.
 @import "pages/bookings/show";
+@import "pages/bookings/index";

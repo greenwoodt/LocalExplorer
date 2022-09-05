@@ -1,11 +1,76 @@
 .bookings-index-container {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-items: center;
+  margin-bottom: 15px;
 }
-.bookings-index_cards {
+#bookings-index-title {
+  margin: 20px;
+  text-align: center;
+}
+.bookings-index-cards {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  text-decoration: none;
+}
+.booking-index-info {
+  padding: 0px 0px 0px 10px;
+  text-align: center;
+}
+.booking-index-info h4 {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+}
+.explorer-card-bookings-index {
+  padding: 6px 20px 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 3px 30px auto;
+}
 
+#explorer-title-index-bookings {
+  text-align: center;
+  margin: 10px 0px 1px;
+  font-weight: bold;
 }
+
+.explorer-card-bookings-index a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #0c5836;
+  margin: 5px;
+  border-radius: 5px;
+}
+
 .bookings-index-links {
+  padding: 6px 20px 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 5px 20px;
+}
 
+.bookings-index-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #7f867c;
+  border-color: #7f867c;
+  margin: 5px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #aeaeae;
+    border-color: #aeaeae;
+  }
 }
