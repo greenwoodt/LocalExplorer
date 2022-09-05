@@ -30,7 +30,14 @@
           <% elsif trip.category.name == "Walk" %>
             <div><span class="tag-trip-category tag-light"><%= trip.category.name %></span></div>
           <% end %>
-          <div><%= image_tag "low.png", class: "difficulty" %></div>
+
+          <% if trip.difficulty == "Easy" %>
+            <div><%= image_tag "low.png", class: "difficulty" %></div>
+          <% elsif trip.difficulty == "Medium" %>
+            <div><%= image_tag "medium.png", class: "difficulty" %></div>
+          <% elsif trip.difficulty == "Hard" %>
+            <div><%= image_tag "hard.png", class: "difficulty" %></div>
+          <% end %>
 
         </div>
 
