@@ -16,7 +16,7 @@
     <div class="card-trip-index">
       <div class="card-index-header">
         <%if trip.photo.attached?%>
-          <%= cl_image_tag trip.photo.key, height: 200, width: 300, crop: :fill, class: "card-img-top" %>
+          <%= link_to cl_image_tag(trip.photo.key), trip_path(trip.id), height: 200, width: 300, crop: :fill, class: "card-img-top" %>
         <%end %>
       </div>
       <div class="card-index-body">
@@ -33,8 +33,12 @@
           Dashboard Design Guidelines
         </p>
         <div class="user-trip-index">
-         <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
-
+         <%# <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" /> %>
+           <% if trip.user.profile.profile_photo.attached? %>
+            <%= cl_image_tag trip.user.profile.profile_photo.key, class: "avatar dropdown-toggle", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
               <%# <%= cl_image_tag trip.user.profile.profile_photo.key, class: "user-trip-index-img" %>
             <div class="user-index-info">
               <h5><%= link_to trip.user.profile.username, profile_path(trip.user.profile) %></h5>
