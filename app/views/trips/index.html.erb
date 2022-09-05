@@ -11,26 +11,27 @@
 <%= link_to "Create a trip", new_trip_path %>
   <br>
 
-  <div class="container-index-trip">
+  <div class="container-trip-index">
    <% @trips.each do |trip|  %>
     <div class="card-trip-index">
-      <div class="card-index-header">
+      <div class="card-trip-index-header">
         <%if trip.photo.attached?%>
           <%= link_to cl_image_tag(trip.photo.key), trip_path(trip.id), height: 200, width: 300, crop: :fill, class: "card-img-top" %>
         <%end %>
       </div>
-      <div class="card-index-body">
-        <div class = "container-trip-tags">
+      <div class="card-trip-index-body">
+        <div class = "d-flex justify-content-between w-100">
           <% if trip.category.name == "Hike" %>
-            <div><span class="tag-category tag-dark"><%= trip.category.name %></span></div>
+            <div><span class="tag-trip-category tag-dark"><%= trip.category.name %></span></div>
           <% elsif trip.category.name == "Swim" %>
-            <div><span class="tag-category tag-middle"><%= trip.category.name %></span></div>
+            <div><span class="tag-trip-category tag-middle"><%= trip.category.name %></span></div>
           <% elsif trip.category.name == "Sightseeing" %>
-            <div><span class="tag-category tag-green"><%= trip.category.name %></span></div>
+            <div><span class="tag-trip-category tag-green"><%= trip.category.name %></span></div>
           <% elsif trip.category.name == "Walk" %>
-            <div><span class="tag-category tag-light"><%= trip.category.name %></span></div>
+            <div><span class="tag-trip-category tag-light"><%= trip.category.name %></span></div>
           <% end %>
-          <div id="dificulty"><%= image_tag "low.png", class: "dificulty" %></div>
+          <div><%= image_tag "low.png", class: "difficulty" %></div>
+
         </div>
 
         <div>
