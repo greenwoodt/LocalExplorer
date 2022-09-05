@@ -1,44 +1,48 @@
-<div class="banner-background">
-  <h2>This is the profile page</h2>
+<div class="banner-background" id="banner-profile-show">
+  <%# <h2>This is the profile page</h2> %>
+    <div class="card-profile">
+      <div class="card-profile-infos">
+        <div class="card-profile-user">
+          <%if @profile.profile_photo.attached? %>
+            <%= cl_image_tag @profile.profile_photo.key, class: "avatar-profile-show"%>
+          <% else %>
+            <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar-profile-show"%>
+          <% end %>
 
+          <div class="card-profile-fullname">
+            <h2><%= @profile.username %></h2>
+            <h5><%= @profile.first_name %> <%  %> <%= @profile.last_name%></h5>
+            <%if @profile.front_driver_license.attached? && @profile.back_driver_license.attached? %>
+              <p>Driver license is verified</p>
+            <% else %>
+              <p>Driver license is not verified</p>
+            <% end %>
+          </div>
+        </div>
 
-  <div class="show-container">
-    <div class="info card-profile">
-      <%if @profile.front_driver_license.attached? %>
-        <%= cl_image_tag @profile.front_driver_license.key, height: 200, width: 300, crop: :fill %>
-      <%end %>
-      <%if @profile.back_driver_license.attached? %>
-        <%= cl_image_tag @profile.back_driver_license.key, height: 200, width: 300, crop: :fill %>
-      <%end %>
-      <%if @profile.profile_photo.attached? %>
-        <%= cl_image_tag @profile.profile_photo.key, height: 200, width: 300, crop: :fill %>
-      <%end %>
-
-
-        <h2>
-          <%= @profile.username %>
-        </h2>
-      <h5><%= @profile.first_name %></h5>
-      <h5><%= @profile.last_name %></h5>
-      <h5><%= @profile.description %></h5>
+        <p><%= @profile.description %></p>
+      </div>
     </div>
-  </div>
 
   <br>
-  <h2><%#= pluralize @booking.user.profile.reviews.size, "review" %></h2>
-
-  <div>
-        <% @reviews.each do |review| %>
-          <p><%= review.comment %></p>
-        <% end %>
-    <% if @booking %>
-      <%= simple_form_for([@booking, @review]) do |f| %>
-        <%= f.input :comment %>
-          <%# <%= f.input :raiting %>
-        <%= f.button :submit %>
+    <div>
+      <% @reviews.each do |review| %>
+        <p><%= review.comment %></p>
       <% end %>
-    <% end %>
-  </div>
+      <% if @booking %>
+       <%= simple_form_for([@booking, @review]) do |f| %>
+         <%= f.input :comment %>
+          <%# <%= f.input :raiting %>
+         <%= f.button :submit %>
+       <% end %>
+     <% end %>
+   </div>
+
+  <%# <h2><%= pluralize @booking.user.profile.reviews.size, "review" %></h2>
+
+
+
+
 
   <% if policy(@profile).edit? %>
     <%= link_to "Update profile", edit_profile_path, class: "btn btn-success" %>
