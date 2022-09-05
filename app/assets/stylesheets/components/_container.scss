@@ -9,3 +9,10 @@
 .body {
   background-image: linear-gradient(aliceblue, #7ea895);
 }
+
+.container-trip-index {
+  display: flex;
+  width: 1040px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
