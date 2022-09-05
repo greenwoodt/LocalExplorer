@@ -1,11 +1,11 @@
-<body class="body-showtrip">
+
   <div class="container-showtrip">
     <div class="card-showtrip">
       <% if @trip.photo.attached? %>
         <%= cl_image_tag @trip.photo.key%>
       <% end %>
       <div class="card-showtrip-info">
-        <div>
+        <div class="card-showtrip-info-text">
           <h1><%= @trip.name %></h1>
           <br>
           <p>Start Date:</p>
@@ -47,6 +47,7 @@
         <p>Your Tripmates:</p>
         <br>
         <br>
+        <div class="grid-mates-showtrip">
         <% if @trip.bookings.exists? %>
             <% @trip.bookings.map {|b|b.user}.map {|u| u.profile}.each do |profile|%>
               <% if profile.profile_photo.attached? %>
@@ -65,12 +66,13 @@
             <br>
             </div>
             <% end %>
+        </div>
         <br>
         <% if @trip.user == current_user && @chatroom %>
           <%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-primary" %>
         <% end %>
       </div>
-    </div>
+
 
 
 
@@ -112,4 +114,4 @@
     </div>
 
   </div>
-</body>
+
