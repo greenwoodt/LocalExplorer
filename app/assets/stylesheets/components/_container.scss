@@ -11,6 +11,9 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+body {
+  min-height: 100vh;
+}
 .container-trip-index {
   display: flex;
 }
