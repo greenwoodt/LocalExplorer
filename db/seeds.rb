@@ -49,7 +49,7 @@ profile1.profile_photo.attach(io: URI.open('https://avatars.githubusercontent.co
 profile1.save!
 
 profile2 = Profile.new(username: "Tibo_the_Brain", first_name: "Thibault", last_name: "Paulmann", description: "I am the brain I am the man", user: user2)
-profile2.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657608771/tzale9h9jj48xgmc6ya5.jpg'), filename: 'Tibo.jpg') 
+profile2.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657608771/tzale9h9jj48xgmc6ya5.jpg'), filename: 'Tibo.jpg')
 profile2.save!
 
 profile3 = Profile.new(username: "Maya_Bee", first_name: "Maya", last_name: "Eyal", description: "Do you want to go to the Malaysian place?", user: user3)
@@ -64,7 +64,7 @@ profile5 = Profile.new(username: "Siona_Moon", first_name: "Siona", last_name: "
 profile5.profile_photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/107324630?v=4'), filename: 'Siona.jpg')
 profile5.save!
 
-profile6 = Profile.new(username: "Nastya_Cheesecake", first_name: "Anastassiya", last_name: "Kostenko", description: "I have a child - his name is Kuza", user: user6)
+profile6 = Profile.new(username: "Nastya_Cheesecake", first_name: "Anastassiya", last_name: "Kostenko", description: "I have a child - his name is Kuzia", user: user6)
 profile6.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657549836/eka2ha3ekdr62mmiqyaz.jpg'), filename: 'Nastya.jpg')
 profile6.save!
 
@@ -79,7 +79,7 @@ profile8.save!
 
 
 #Trips
-trip1 = Trip.new(name: "Mont Rebei", description: "A beautiful hike tour through the canyons of Mont Rebei", capacity: 4, price_cents: 15 , category: category1, difficulty: "Medium", start_date: "10.09.2022", end_date: "11.09.2022", user: user1, address: "Mont Rebei")
+trip1 = Trip.new(name: "Mont Rebei", description: "A beautiful hike tour through the canyons of Mont Rebei. Amazing views!", capacity: 4, price_cents: 15 , category: category1, difficulty: "Medium", start_date: "10.09.2022", end_date: "11.09.2022", user: user1, address: "Mont Rebei")
 trip1.photo.attach(io: URI.open('https://www.65ymas.com/uploads/s1/17/75/26/de-ruta-por-el-congost-de-mont-rebei-un-espectacular-desfiladero-entre-huesca-y-lerida.jpeg'), filename: 'hike.jpg')
 trip1.save!
 

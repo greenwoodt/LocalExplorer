@@ -1,9 +1,22 @@
 <div class="container-trip-index">
-  <div class="container-trip-index-cards">
-    <% @trips.each do |trip|  %>
-      <%= render "index_card", trip: trip %>
-    <%end %>
+  <div style="width: 60%;">
+    <div class="container-search-bar-trip-index">
+      <h2></h2>
+      <%= form_with url: trips_path, method: :get, class: "d-flex search-bar-trip-index" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a destination"%>
+        <%= submit_tag "Search", class: "btn btn-success" %>
+       <% end %>
+    </div>
+    <div class="container-trip-index-cards">
+        <% @trips.each do |trip|  %>
+          <%= render "trip_index_card", trip: trip %>
+        <%end %>
+      </div>
   </div>
+
 
   <div class ="map-container-trips-index">
     <div style="width: 100%; height: 95vh;"
@@ -13,5 +26,8 @@
     </div>
   </div>
 
+  <div class="btn btn-success float-button">
+    <%= link_to " + Create a trip", new_trip_path %>
+  </div>
 
 </div>
