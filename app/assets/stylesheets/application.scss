@@ -20,6 +20,7 @@
 
 // CSS of trips pages.
 @import "pages/trips/index";
+@import "pages/trips/tripform";
 
 //CSS of booking pages.
 @import "pages/bookings/show";
@@ -28,3 +29,6 @@
 //CSS of profiles pages
 @import "pages/profiles/show";
 @import "pages/trips/show";
+
+@import "components/searchbar";
+@import "pages/profiles/profileform";

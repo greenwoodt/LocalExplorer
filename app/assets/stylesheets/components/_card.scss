@@ -84,6 +84,7 @@
   align-items: flex-start;
   padding: 20px;
   min-height: 200px;
+  max-height: 231px;
 
 }
 .card-trip-index-body a {
@@ -104,17 +105,23 @@
   cursor: pointer;
 }
 
-.tag-dark {
+.tag-orange {
   background-color: #ca780c;
 }
-.tag-light {
+.tag-sky {
   background-color: #188686;
 }
-.tag-middle {
+.tag-pink {
   background-color: #eca2dc;
 }
 .tag-green {
-  background-color: #eb4359;
+  background-color: #5f7430;
+}
+.tag-purple {
+  background-color: #9f43eb;
+}
+.tag-red {
+  background-color: #ef0625;
 }
 
 .card-trip-index-body p {
@@ -127,9 +134,11 @@
   margin-top: auto;
   padding: 15px;
 
-
 }
-
+.user-trip-index a {
+  text-decoration: none;
+  color: #0c5836;
+}
 .user-trip-index img {
   border-radius: 50%;
   width: 40px;
@@ -156,10 +165,6 @@
   display: block;
 }
 
-// .hover-text:hover {
-//   display: block;
-//   background-color: #ca780c;
-// }
 
 
 

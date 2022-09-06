@@ -1,0 +1,12 @@
+<%= simple_form_for(@profile) do |f| %>
+        <%= f.input :username, input_html: {class: "profile-form-rest"} %>
+        <%= f.input :first_name, input_html: {class: "profile-form-rest"} %>
+        <%= f.input :last_name, input_html: {class: "profile-form-rest"} %>
+        <%= f.input :description, label: "Tell us a little about yourself!", input_html: {class: "profile-form-rest"}%>
+        <%= f.input :profile_photo, as: :file, input_html: {class: "profile-form-rest"} %>
+        <div class="profile-form-elements">
+          <%= f.input :front_driver_license, as: :file, input_html: {class: "licence-picker"} %>
+          <%= f.input :back_driver_license, as: :file,input_html: {class: "licence-picker"} %>
+        </div>
+        <%= f.submit class: "btn btn-success" %>
+  <% end %>
