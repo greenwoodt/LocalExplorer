@@ -31,3 +31,7 @@
 
 @import "components/searchbar";
 @import "pages/profiles/profileform";
+
+body {
+  min-height: 100vh;
+}
