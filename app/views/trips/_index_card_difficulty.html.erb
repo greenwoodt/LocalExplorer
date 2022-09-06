@@ -1,0 +1,11 @@
+
+<% if trip.difficulty == "Easy" %>
+  <div><%= image_tag "low.png", class: "difficulty" %>
+  <p class= "hover-text" style="color: green">easy</p></div>
+<% elsif trip.difficulty == "Medium" %>
+  <div><%= image_tag "medium.png", class: "difficulty" %>
+  <p class= "hover-text" style="color: orange">medium</p></div>
+<% elsif trip.difficulty == "Hard" %>
+  <div><%= image_tag "hard.png", class: "difficulty" %>
+    <p class= "hover-text" style="color: red">hard!</p></div>
+<% end %>
