@@ -17,8 +17,10 @@
           <%# </li>
           <li class="nav-item"> %>
             <%# <%= link_to "Messages", "#", class: "nav-link" %>
-          <%# </li> %>
-          <%# <%= current_user.profile.username, class: "navbar-username"%>
+            <div style="vertical-align: middle; margin-top: 12px; margin-right: 15px;">
+            <%= current_user.profile.username %>
+            </div>
+        
           <li class="nav-item dropdown">
             <% if current_user.profile&.profile_photo&.attached? %>
               <%= cl_image_tag current_user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
