@@ -17,6 +17,7 @@
 
 //CSS of components pages.
 @import "components/card";
+@import "components/searchbar";
 
 // CSS of trips pages.
 @import "pages/trips/index";
@@ -32,6 +33,7 @@
 @import "components/searchbar";
 @import "pages/profiles/profileform";
 
-body {
-  min-height: 100vh;
-}
+//CSS of landing page
+@import "pages/landingpage/landingpage";
+
+//CSS font file
