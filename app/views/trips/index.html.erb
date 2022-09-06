@@ -1,7 +1,7 @@
 <div class="container-trip-index">
   <div style="width: 60%;">
-    <div>
-      <%= form_with url: trips_path, method: :get, class: "d-flex searchbar-trip-index" do %>
+    <div class="container-search-bar-trip-index">
+      <%= form_with url: trips_path, method: :get, class: "d-flex search-bar-trip-index" do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
