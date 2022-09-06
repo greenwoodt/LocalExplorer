@@ -4,7 +4,5 @@ import "./controllers"
 import "bootstrap"
 import { initFlatpickr } from "./plugins/flatpickr";
 
-document.addEventListener("turbo:load", () => {
-  initFlatpickr();
-
-})
+document.addEventListener("turbo:load", initFlatpickr)
+document.addEventListener("turbo:render", initFlatpickr)
