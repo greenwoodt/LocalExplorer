@@ -1,15 +1,6 @@
-<%= simple_form_for(@trip) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description, label: 'Add some description of the trip!'%>
-  <%= f.input :address %>
-  <%= f.input :capacity, collection: (1..4) %>
-  <%= f.input :difficulty, collection: %w[Easy Medium Hard] %>
-  <%= f.association :category %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
-  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
-  <%= f.input :price_cents, label: 'Estimated Transportation Costs'%>
-  <%= f.submit %>
-<% end %>
-
-<% link_to "Create", trips_path, :class => "btn-trips-create"%>
+<div class="trip-new-container">
+<h4>Create your new trip explorer!</h4>
+  <div class="trip-new-card">
+    <%= render "form" %>
+  </div>
+</div>
