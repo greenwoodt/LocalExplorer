@@ -16,9 +16,14 @@
   display: flex;
 }
 .container-trip-index-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 60%;
-  justify-content: space-evenly;
+  grid-gap: 20px;
   flex-wrap: wrap;
-
 }
+// @media screen and (max-width: 480px) {
+//   .container-trip-index-cards {
+//     grid-template-column: 1fr;
+//   }
+// }
