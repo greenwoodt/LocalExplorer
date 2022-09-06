@@ -1,0 +1,37 @@
+.trip-new-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0px 50px auto;
+}
+
+.trip-new-container h4 {
+  margin-bottom: 35px;
+}
+
+.trip-new-card {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  color: rgb(12, 13, 13);
+}
+
+.trip-form-elements {
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.datepicker {
+  width: 340px;
+  border-radius: 3px;
+}
+
+.trip-elements-3 {
+  width: 220px;
+  border-radius: 3px;
+}
+
+.trip-form-rest {
+  border-radius: 3px;
+}
