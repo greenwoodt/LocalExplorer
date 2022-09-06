@@ -1,4 +1,4 @@
-<div class="banner-background" id="banner-profile-show">
+<div class="banner-none" id="banner-profile-show">
   <div class="card-profile">
       <div class="card-profile-infos w-100">
         <div class="card-profile-user">
@@ -71,7 +71,7 @@
 
       <div class="profile-wrap">
         <% if policy(@profile).destroy? %>
-        <%= link_to "View all trips", trips_path, class: "btn btn-success" %>
+        <%= link_to "View the trips", trips_path, class: "btn btn-success" %>
         <% end %>
       </div>
 

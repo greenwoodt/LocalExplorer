@@ -29,3 +29,7 @@
 //CSS of profiles pages
 @import "pages/profiles/show";
 @import "pages/profiles/profileform";
+
+body {
+  min-height: 100vh;
+}
