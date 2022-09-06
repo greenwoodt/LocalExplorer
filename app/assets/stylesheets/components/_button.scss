@@ -1,7 +1,11 @@
-.btn.btn-success{
+.btn-success {
   border-radius: 7px;
+  vertical-align: middle;
+  height: fit-content;
+  width: fit-content;
   a {
     color: white;
     text-decoration: none;
+    vertical-align: middle;
   }
 }
