@@ -37,8 +37,11 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     authorize @trip
-    @trip.save!
-    redirect_to trip_path(@trip)
+    if @trip.save
+      redirect_to trip_path(@trip)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit

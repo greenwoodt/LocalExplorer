@@ -73,13 +73,15 @@
     grid-template-columns: 1fr ;
   }
 }
-
 .body {
   background-image: linear-gradient(aliceblue, #7ea895);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
-
+body {
+  min-height: 100vh;
+}
 .container-trip-index {
   display: flex;
 }
@@ -91,6 +93,14 @@
   grid-gap: 20px;
   margin: 55px;
   flex-wrap: wrap;
+}
+.banner-background {
+  width: 100%;
+  height: 100%;
+  background-image: url("mountainlake.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: fit-content;
   align-content: center;
 }
