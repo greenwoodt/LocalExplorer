@@ -27,8 +27,12 @@
             <div><span class="tag-trip-category tag-middle"><%= trip.category.name %></span></div>
           <% elsif trip.category.name == "Sightseeing" %>
             <div><span class="tag-trip-category tag-green"><%= trip.category.name %></span></div>
-          <% elsif trip.category.name == "Walk" %>
-            <div><span class="tag-trip-category tag-light"><%= trip.category.name %></span></div>
+          <% elsif trip.category.name == "Climb" %>
+            <div><span class="tag-trip-category tag-gray"><%= trip.category.name %></span></div>
+          <% elsif trip.category.name == "Mountainbike" %>
+            <div><span class="tag-trip-category tag-red"><%= trip.category.name %></span></div>
+          <% elsif trip.category.name == "Skiing/Snowboarding" %>
+            <div><span class="tag-trip-category tag-orange"><%= trip.category.name %></span></div>
           <% end %>
 
           <% if trip.difficulty == "Easy" %>
