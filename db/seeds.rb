@@ -79,24 +79,28 @@ profile8.save!
 
 
 #Trips
-trip1 = Trip.new(name: "Mont Rebei", description: "A beautiful hike tour through the canyons of Mont Rebei", capacity: 4, price_cents: 15 , category: category1, difficulty: "Medium", start_date: "24.09.2022", end_date: "26.09.2022", user: user1, address: "Barcelona")
+trip1 = Trip.new(name: "Mont Rebei", description: "A beautiful hike tour through the canyons of Mont Rebei", capacity: 4, price_cents: 15 , category: category1, difficulty: "Medium", start_date: "10.09.2022", end_date: "11.09.2022", user: user1, address: "Mont Rebei")
+trip1.photo.attach(io: URI.open('https://www.65ymas.com/uploads/s1/17/75/26/de-ruta-por-el-congost-de-mont-rebei-un-espectacular-desfiladero-entre-huesca-y-lerida.jpeg'), filename: 'hike.jpg')
 trip1.save!
 
-trip2 = Trip.new(name: "Girona", description: "We going sightseeing in beautiful Girona. Where some of the Game of Thrones scenes were made", capacity: 4, price_cents: 15 , category: category4, difficulty: "Easy", start_date: "24.09.2022", end_date: "26.09.2022", user: user2, address: "Madrid")
+trip2 = Trip.new(name: "Girona", description: "We going sightseeing in beautiful Girona. Where some of the Game of Thrones scenes were made", capacity: 4, price_cents: 15 , category: category4, difficulty: "Easy", start_date: "24.09.2022", end_date: "26.09.2022", user: user2, address: "Girona")
+trip2.photo.attach(io: URI.open('https://espanaviajar.com/wp-content/uploads/2020/06/GIRONA-Ciudad-de-Espana.jpg'), filename: 'girona.jpg')
 trip2.save!
 
-trip3 = Trip.new(name: "Cadaques", description: "Absolutely beautiful white town directly on the costa Brava. We going to enjoy the weekend and will make a Sailboat trip together aswell!", capacity: 2, price_cents: 15 , category: category3, difficulty: "Easy", start_date: "24.09.2022", end_date: "26.09.2022", user: user3, address: "Sevilla")
+trip3 = Trip.new(name: "Cadaques", description: "Absolutely beautiful white town directly on the costa Brava. We going to enjoy the weekend and will make a Sailboat trip together aswell!", capacity: 4, price_cents: 15 , category: category3, difficulty: "Easy", start_date: "24.09.2022", end_date: "26.09.2022", user: user3, address: "Cadaques")
+trip3.photo.attach(io: URI.open('https://itinerariesnow.files.wordpress.com/2019/07/cadaques_pueblo_marinero.jpg?w=768&h=421'), filename: 'cadaques.jpg')
 trip3.save!
 
-trip4 = Trip.new(name: "Girona Pyrenees", description: "Mountainbike", capacity: 3, price_cents: 15 , category: category5, difficulty: "Medium", start_date: "24.09.2022", end_date: "26.09.2022", user: user4, address: "Girona")
+trip4 = Trip.new(name: "Girona Pyrenees", description: "On this Mountainbike trip will ride along the beautiful Costa Brava and enjoy amazing views on our bikes", capacity: 3, price_cents: 15 , category: category5, difficulty: "Medium", start_date: "01.10.2022", end_date: "02.10.2022", user: user8, address: "Girona Pyrenees")
 trip4.photo.attach(io: URI.open('https://www.somactiunatura.com/wp-content/uploads/2021/06/77A2213-1024x683.jpg'), filename: 'mountainbike.jpg')
 trip4.save!
 
-trip5 = Trip.new(name: "Gam del Bisque", description: "Attention! This is only for experienced Climbers! I always wanted to conquer the Gam el Bisque Trail - who would be up for that?", capacity: 3, price_cents: 15 , category: category6, difficulty: "Hard", start_date: "24.09.2022", end_date: "26.09.2022", user: user4, address: "Girona")
-trip4.photo.attach(io: URI.open('https://gdm.cat/sites/default/files/2020-03/Gam%20del%20Bisbe%202.jpeg'), filename: 'climb.jpg')
+trip5 = Trip.new(name: "Gam del Bisbe", description: "Attention! This is only for experienced Climbers! I always wanted to conquer the Gam el Bisbe Trail - who would be up for that?", capacity: 3, price_cents: 10 , category: category6, difficulty: "Hard", start_date: "24.09.2022", end_date: "26.09.2022", user: user4, address: "La Panxa del Bisbe")
+trip5.photo.attach(io: URI.open('https://gdm.cat/sites/default/files/2020-03/Gam%20del%20Bisbe%202.jpeg'), filename: 'climb.jpg')
 trip5.save!
 
-trip6 = Trip.new(name: "Andorra", description: "Who wants to go Skiing/Snowboarding with me over the weekend in ", capacity: 3, price_cents: 15 , category: category4, difficulty: "Easy", start_date: "24.09.2022", end_date: "26.09.2022", user: user4, address: "Girona")
+trip6 = Trip.new(name: "Andorra", description: "Who wants to go Skiing/Snowboarding with me over the weekend in Andorra. Be warned we go fast! ;)", capacity: 3, price_cents: 50 , category: category2, difficulty: "Hard", start_date: "03.12.2022", end_date: "04.12.2022", user: user7, address: "Andorra")
+trip6.photo.attach(io: URI.open('https://en.ski-france.com/media/cache/gallery_default/5603441-Grandvalira-(Andorra)-ski-area-.jpg'), filename: 'ski.jpg')
 trip6.save!
 
 chatroom1 = Chatroom.create()
@@ -128,11 +132,11 @@ booking8.save!
 booking6 = Booking.new(trip: trip3, user: user7, chatroom: chatroom3)
 booking6.save!
 
-booking7 = Booking.new(trip: trip4, user: user8, chatroom: chatroom4)
+booking7 = Booking.new(trip: trip4, user: user7, chatroom: chatroom4)
 booking7.save!
 
 booking8 = Booking.new(trip: trip5, user: user8, chatroom: chatroom5)
 booking8.save!
 
-booking9 = Booking.new(trip: trip6, user: user8, chatroom: chatroom6)
+booking9 = Booking.new(trip: trip6, user: user1, chatroom: chatroom6)
 booking9.save!
