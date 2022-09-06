@@ -10,13 +10,14 @@
           <span class="tag-trip-category <%= category_tag(trip.category) %>"><%= trip.category.name %></span>
         </div>
 
-        <%= render "index_card_difficulty", trip: trip %>
+        <%= render "trip_index_card_difficulty", trip: trip %>
 
     </div>
 
     <div>
       <small>Date: <%= trip.start_date.strftime("%m/%d/%Y") %> - </small>
       <small><%= trip.end_date.strftime("%m/%d/%Y") %></small>
+      <br>
     </div>
     <h4>
       <%= link_to trip.name, trip_path(trip.id) %>
@@ -35,7 +36,7 @@
         <%# <%= cl_image_tag trip.user.profile.profile_photo.key, class: "user-trip-index-img" %>
     <div class="user-index-info">
       <h5><%= link_to trip.user.profile.username, profile_path(trip.user.profile) %></h5>
-      <small>Your Local Explorer</small>
+      <small style="padding: 0;  font-style: italic;">Your Local Explorer</small>
     </div>
 
   </div>
