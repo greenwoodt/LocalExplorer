@@ -1,11 +1,12 @@
 <div class="container-trip-index">
   <div style="width: 60%;">
     <div class="container-search-bar-trip-index">
+      <h2></h2>
       <%= form_with url: trips_path, method: :get, class: "d-flex search-bar-trip-index" do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a trip"%>
+      placeholder: "Find a destination"%>
         <%= submit_tag "Search", class: "btn btn-primary" %>
        <% end %>
     </div>
