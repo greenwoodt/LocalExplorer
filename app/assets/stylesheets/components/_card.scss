@@ -284,6 +284,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 15px;
+  p {
+    color: #3a5a40;
+    font-size: 400;
+    font-weight: 500;
+  }
 }
 
 .local-explorer-card {
