@@ -10,17 +10,20 @@
 // }
 
 
-.card-profile {
-  width: 350px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  flex-grow: 1;
-}
+// .card-profile {
+//   width: 350px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   border-radius: 10px;
+//   margin-top: 10px;
+//   margin-left: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   flex-grow: 1;
+// }
+
+
 
 // .card-product {
 //   overflow: hidden;
@@ -185,6 +188,7 @@
   width: 40px;
   height: 40px;
   margin-right: 10px;
+  position: relative;
 }
 .user-trip-index-info h5 {
   margin: 0;
@@ -192,10 +196,23 @@
 .user-trip-index-info small {
   color: #545d7a;
 }
+.hover-text {
+  display: none;
+  position: absolute;
+  font-style: italic;
+}
 .difficulty {
   width: 30px;
   height: 30px;
 }
+.difficulty:hover + p {
+  display: block;
+}
+
+// .hover-text:hover {
+//   display: block;
+//   background-color: #ca780c;
+// }
 
 // trip show page
 .card-user-showtrip {
