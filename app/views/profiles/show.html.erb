@@ -43,43 +43,41 @@
 
 
 
+  <div class="card-profile-tabs">
+    <div class="profile-wrap">
+      <% if policy(@profile).edit? %>
+      <%= link_to "Update profile", edit_profile_path, class: "btn btn-success" %>
+      <% end %>
+    </div>
 
-  <% if policy(@profile).edit? %>
-    <%= link_to "Update profile", edit_profile_path, class: "btn btn-success" %>
-  <% end %>
+    <div class="profile-wrap">
+      <% if policy(@profile).destroy? %>
+      <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-success"%>
+      <% end %>
+    </div>
 
-  <br>
-  <br>
+    <div class="profile-wrap">
+      <% if policy(@profile).destroy? %>
+      <%= link_to "Create a trip", new_trip_path, class: "btn btn-success"%>
+      <% end %>
+    </div>
 
-  <% if policy(@profile).destroy? %>
-    <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-success"%>
-  <% end %>
+    <div class="profile-wrap">
+      <% if policy(@profile).destroy? %>
+      <%= link_to "View all trips", trips_path, class: "btn btn-success" %>
+      <% end %>
+    </div>
 
-  <br>
-  <br>
+    <div class="profile-wrap">
+      <% if policy(@profile).destroy? %>
+      <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id)), class: "btn btn-success"%>
+      <% end %>
+    </div>
 
-  <% if policy(@profile).destroy? %>
-  <%= link_to "Create a trip", new_trip_path, class: "btn btn-success"%>
-  <% end %>
-
-  <br>
-  <br>
-
-  <% if policy(@profile).destroy? %>
-    <%= link_to "View all trips", trips_path, class: "btn btn-success" %>
-  <% end %>
-
-  <br>
-  <br>
-  <%# <% raise %>
-  <% if policy(@profile).destroy? %>
-    <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id)), class: "btn btn-success"%>
-  <% end %>
-
-  <br>
-  <br>
-
-  <% if policy(@profile).destroy? %>
-    <%= link_to 'My Bookings', bookings_path(@booking), class: "dropdown-item btn btn-success" %>
-  <% end %>
+    <div class="profile-wrap">
+      <% if policy(@profile).destroy? %>
+      <%= link_to 'My Bookings', bookings_path(@booking), class: "btn btn-success" %>
+      <% end %>
+    <div>
+  </div>
 </div>
