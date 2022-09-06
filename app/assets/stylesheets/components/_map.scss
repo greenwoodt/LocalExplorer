@@ -9,7 +9,12 @@
 
 
 .map-container-showtrip {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.map-container-trips-index {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
