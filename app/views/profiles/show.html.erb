@@ -24,11 +24,14 @@
 
   <br>
 
-    <div class="container-profile-comment">
-      <% @reviews.each do |review| %>
-        <div><p><%= review.comment %></p></div>
+   <div class="container-profile-comment">
+      <% if @profile.user.received_bookings.map { |booking| booking.review }.select { |r| !r.nil?} == [] %>
+        <p>No reviews yet</p>
+      <% else %>
+       <% @reviews.each do |review| %>
+          <div><p><%= review.comment %></p></div>
+        <% end %>
       <% end %>
-      <%# if no review -> No reviews yet (in italics and centered) %>
     </div>
 
       <% if @booking && current_user != @profile.user %>
