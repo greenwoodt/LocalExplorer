@@ -1,20 +1,6 @@
-<h2>Change your info</h2>
-
-<div class="banner-createprofile">
-  <%= simple_form_for(@profile) do |f| %>
-    <div class="container-inputform">
-      <div class="form-inputs">
-        <%= f.input :username %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :description %>
-        <%= f.input :front_driver_license, as: :file %>
-        <%= f.input :back_driver_license, as: :file %>
-        <%= f.input :profile_photo, as: :file %>
-      </div>
-      <div class="button">
-        <%= f.button :submit %>
-      </div>
+<div class="profile-new-container">
+  <h4>Edit your profile here!</h4>
+    <div class="form-new-card">
+      <%= render "profileform" %>
     </div>
-  <% end %>
 </div>
