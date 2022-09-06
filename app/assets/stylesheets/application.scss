@@ -17,6 +17,7 @@
 
 //CSS of components pages.
 @import "components/card";
+@import "components/searchbar";
 
 // CSS of trips pages.
 @import "pages/trips/index";
@@ -29,3 +30,8 @@
 //CSS of profiles pages
 @import "pages/profiles/show";
 @import "pages/profiles/profileform";
+
+//CSS of landing page
+@import "pages/landingpage/landingpage";
+
+//CSS font file
