@@ -15,12 +15,12 @@
           <div id="explorer-card-bookings-show-flex">
               <p>Your Local Exporer</p>
               <div class="explorer-card-bookings-show">
-                <% if @booking.user.profile.profile_photo.attached? %>
-                  <%= cl_image_tag @booking.user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% if @booking.trip.user.profile.profile_photo.attached? %>
+                  <%= cl_image_tag @booking.trip.user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                     <% else %>
                   <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% end %>
-                <%= link_to @booking.user.profile.username, profile_path(@booking.user.profile.id) %>
+                <%= link_to @booking.trip.user.profile.username, profile_path(@booking.trip.user.profile.id) %>
               </div>
           </div>
         </div>
