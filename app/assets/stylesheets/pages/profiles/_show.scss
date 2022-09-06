@@ -10,7 +10,7 @@
 
 .card-profile {
   width: 500px;
-  height: 450px;
+  padding-bottom: 30px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -91,6 +91,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -100,3 +101,28 @@
 // .profile-wrap {
 
 // }
+
+.container-profile-comment {
+  width: 500px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  color: black;
+}
+
+.container-profile-comment-input{
+  width: 500px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  // text-align: center;
+  margin: 0 auto;
+  display: flex;
+  color: black;
+}
