@@ -1,14 +1,12 @@
 <div class="banner-background" id="banner-profile-show">
-  <%# <h2>This is the profile page</h2> %>
-    <div class="card-profile">
+  <div class="card-profile">
       <div class="card-profile-infos w-100">
         <div class="card-profile-user">
           <%if @profile.profile_photo.attached? %>
             <%= cl_image_tag @profile.profile_photo.key, class: "avatar-profile-show"%>
-          <% else %>
+            <% else %>
             <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar-profile-show"%>
           <% end %>
-
           <div class="card-profile-fullname">
             <h2><%= @profile.username %></h2>
             <h5><%= @profile.first_name %> <%  %> <%= @profile.last_name%></h5>
@@ -22,7 +20,7 @@
 
         <p><%= @profile.description %></p>
       </div>
-    </div>
+  </div>
 
   <br>
 
@@ -31,16 +29,18 @@
         <div><p><%= review.comment %></p></div>
       <% end %>
       <%# if no review -> No reviews yet (in italics and centered) %>
-      </div>
-      <div class="container-profile-comment-input">
+    </div>
+
       <% if @booking && current_user != @profile.user %>
+        <div class="container-profile-comment-input">
        <%= simple_form_for([@booking, @review]) do |f| %>
          <%= f.input :comment %>
           <%# <%= f.input :raiting %>
          <%= f.button :submit %>
        <% end %>
-     <% end %>
-   </div>
+       </div>
+      <% end %>
+
 
   <%# <h2><%= pluralize @booking.user.profile.reviews.size, "review" %></h2>
 

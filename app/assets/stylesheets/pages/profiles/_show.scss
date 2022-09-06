@@ -75,6 +75,7 @@
 #banner-profile-show {
   padding-top: 60px;
   padding-bottom: 30px;
+
 }
 
 .avatar-profile-show {
@@ -86,7 +87,7 @@
 .card-profile-tabs {
   width: 500px;
   height: 100px;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -96,6 +97,9 @@
   display: flex;
   flex-wrap: wrap;
   color: black;
+  padding-left: 34px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 // .profile-wrap {
