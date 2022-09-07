@@ -34,16 +34,13 @@
 @import "components/searchbar";
 @import "pages/profiles/profileform";
 
-//CSS of headline text
-
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Yeseva+One&display=swap')
-
-// body {
-//   min-height: 100vh;
-// }
-
 //CSS of landing page
-
-
-CSS font file
 @import "pages/landingpage/landingpage";
+
+//CSS of headline text
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');

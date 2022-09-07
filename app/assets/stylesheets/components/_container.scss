@@ -21,7 +21,7 @@
   padding: 110px;
   margin-left: 15%;
   margin-right: 15%;
-  a { 
+  a {
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -79,9 +79,28 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 body {
   min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h5 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
 }
+
+
 .container-trip-index {
   display: flex;
 }
