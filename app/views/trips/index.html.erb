@@ -11,9 +11,11 @@
        <% end %>
     </div>
     <div class="container-trip-index-cards">
-        <% @trips.each do |trip|  %>
-          <%= render "trip_index_card", trip: trip %>
-        <%end %>
+          <% if current_user.profile != nil %>
+           <% @trips.each do |trip|  %>
+           <%= render "trip_index_card", trip: trip %>
+          <%end %>
+        <%end%>
       </div>
   </div>
 
@@ -32,4 +34,5 @@
   <% else %>
      <%= link_to "Add Profile to create a trip", new_profile_path, :class => "btn btn-success float-button" %>
   <% end %>
+
 </div>
