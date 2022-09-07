@@ -98,7 +98,7 @@
             <% end %>
           <% end %>
           <% else %>
-            <% link_to "Add Profile", new_profile_path, :class => "btn btn-success float-button" %>
+            <%= link_to "Add Profile to book", new_profile_path, :class => "btn btn-success" %>
         <% end %>
           <% if policy(@trip).edit? %>
             <%= link_to "Update trip", edit_trip_path, :class => "btn btn-success"  %>
