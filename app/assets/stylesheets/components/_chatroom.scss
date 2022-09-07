@@ -30,10 +30,12 @@
 
 .container-chatroom {
   border-radius: 10px;
-  height: 100vH;
+  height: calc(100vh - 75px);
   padding: 110px;
   margin-left: 15%;
   margin-right: 15%;
+  margin-bottom: 7%;
+  margin-top: -1%;
   a { 
     color: white;
     text-decoration: none;
@@ -52,5 +54,11 @@
 
   i {
     color: #0c5836;
+  }
+
+  .messages {
+    height: 100%;
+    overflow: scroll;
+    padding: 1rem;
   }
 }
