@@ -54,11 +54,26 @@
   }
 }
 
-.body {
+// .body {
+//   background-image: linear-gradient(aliceblue, #7ea895);
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   // height: 100vh;
+// }
+.body-container {
   background-image: linear-gradient(aliceblue, #7ea895);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  // height: 100vh;
+}
+
+.forgot-your-password {
+  padding: 75px;
+}
+
+.body-overall-container {
   height: 100vh;
 }
 
