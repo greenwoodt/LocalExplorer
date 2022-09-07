@@ -25,22 +25,24 @@
   <br>
 
    <div class="container-profile-comment">
+    <div>
+      <h5>Reviews: </h5>
+    </div>
       <% if @profile.user.received_bookings.map { |booking| booking.review }.select { |r| !r.nil?} == [] %>
         <p>No reviews yet</p>
       <% else %>
        <% @reviews.each do |review| %>
-          <div><p><%= review.comment %></p></div>
+          <div><p><%= review.comment %><span class ="profile-show-reviews-user">   - by <%= link_to review.booking.user.profile.username, profile_path(review.booking.user.profile.id) %></span></p></div>
         <% end %>
       <% end %>
     </div>
 
       <% if @booking && current_user != @profile.user %>
         <div class="container-profile-comment-input">
-       <%= simple_form_for([@booking, @review]) do |f| %>
-         <%= f.input :comment %>
-          <%# <%= f.input :raiting %>
-         <%= f.button :submit %>
-       <% end %>
+          <%= simple_form_for([@booking, @review]) do |f| %>
+          <%= f.input :comment, label: "Leave your comment here:", input_html: {class: "comment-imput-field"} %>
+          <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
        </div>
       <% end %>
 
@@ -88,4 +90,10 @@
       <div>
     </div>
   <% end %>
+  <div class="btn btn-success float-button1">
+    <%= link_to " + Create a trip", new_trip_path %>
+  </div>
+   <div class="btn btn-success float-button">
+    <%= link_to "Back to trips", trips_path %>
+  </div>
 </div>

@@ -15,28 +15,6 @@
 
 }
 
-.container-chatroom {
-  border-radius: 10px;
-  height: 100vH;
-  padding: 110px;
-  margin-left: 15%;
-  margin-right: 15%;
-  a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    background-color: #0c5836;
-    border-radius: 7px;
-  }
-  h1 {
-    color:#0c5836;
-    font-weight:200;
-    font-size: xx-large;
-  }
-  p {
-    font-size: larger;
-  }
-}
 
 
 // Smallest device
@@ -63,21 +41,25 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container-showtrip {
-    grid-template-columns: 1fr ;
+    margin-right: 198px;
+    margin-left: 68px;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .container-showtrip {
-    grid-template-columns: 1fr ;
+    margin-right: 198px;
+    margin-left: 68px;
   }
 }
+
 .body {
   background-image: linear-gradient(aliceblue, #7ea895);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 body {
@@ -114,14 +96,6 @@ body {
   grid-gap: 20px;
   margin: 55px;
   flex-wrap: wrap;
-}
-.banner-background {
-  width: 100%;
-  height: 100%;
-  background-image: url("mountainlake.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: fit-content;
   align-content: center;
 }

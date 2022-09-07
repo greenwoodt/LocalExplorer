@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
     authorize @profile
     @profile.save
-    if @profile.save
+    if @profile.save!
       redirect_to root_path
     else
       render 'new', status: :unprocessable_entity

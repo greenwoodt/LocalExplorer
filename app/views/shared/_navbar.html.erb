@@ -12,15 +12,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <%# <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          <%# <%# </li> %>
-          <%# <li class="nav-item"> %>
-            <%# <%= link_to "Messages", "#", class: "nav-link" %>
-            <%# <div style="vertical-align: middle; margin-top: 12px; margin-right: 15px; color: #3a5a40">
-            <%= current_user.profile.username %>
-            </div>
-
+            <% if current_user.profile != nil %>
+              <%# <li class="nav-item active">
+              <%= link_to "Home", "#", class: "nav-link" %>
+              <%# <%# </li> %>
+              <%# <li class="nav-item"> %>
+              <%# <%= link_to "Messages", "#", class: "nav-link" %>
+              <%# <div style="vertical-align: middle; margin-top: 12px; margin-right: 15px; color: #3a5a40"> %>
+              <%# <%= current_user.profile.username %>
+              <div style="vertical-align: middle; margin-top: 12px; margin-right: 15px; color: #3a5a40">
+              <%= current_user.profile.username %>
+              </div>
+            <% end  %>
           <li class="nav-item dropdown">
             <% if current_user.profile&.profile_photo&.attached? %>
               <%= cl_image_tag current_user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -36,6 +39,7 @@
               <%= link_to "Home", root_path, class: "dropdown-item" %>
               <%= link_to 'My Bookings', bookings_path(), class: "dropdown-item" %>
               <%= link_to "Available trips", trips_path, class: "dropdown-item"%>
+              <%= link_to "Edit account", edit_user_registration_path, class: "dropdown-item"%>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

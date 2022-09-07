@@ -113,8 +113,13 @@
 
   margin: 0 auto;
   margin-bottom: 20px;
-  display: flex;
+
   color: black;
+}
+.container-profile-comment p{
+  margin: unset;
+  display: list-item;
+  margin-left: 18px;
 }
 
 .container-profile-comment-input{
@@ -123,8 +128,16 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
-  // text-align: center;
   margin: 0 auto;
   display: flex;
   color: black;
+}
+.profile-show-reviews-user {
+  justify-content: flex-end;
+  font: italic;
+  font-size: small;
+  color: rgb(14, 50, 14);
+}
+.comment-imput-field {
+  width: 467px;
 }
