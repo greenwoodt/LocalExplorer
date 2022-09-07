@@ -4,29 +4,26 @@
     <div class="card-profiles-info-showtrip">
       <div class="grid-mates-showtrip">
       <p>Your Local Explorer</p>
-       <div class="local-explorer-card">
         <% if @trip.user.profile.profile_photo.attached? %>
-          <%= cl_image_tag @trip.user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= link_to profile_path(@trip.user.profile.id) do %>
+            <%= cl_image_tag @trip.user.profile.profile_photo.key, class: "avatar-tripshow" %>
+          <% end %>
         <% else %>
-          <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= link_to profile_path(@trip.user.profile.id) do %>
+            <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar-tripshow" %>
+          <% end %>
         <% end %>
-        <div class="your-local-exporer">
-        <%= link_to @trip.user.profile.username, profile_path(@trip.user.profile.id) %>
-        </div>
-      </div>
       <% if @trip.bookings.exists? %>
       <p>Your Tripmates</p>
           <% @trip.bookings.map {|b|b.user}.map {|u| u.profile}.each do |profile|%>
             <% if profile.profile_photo.attached? %>
-              <div class="mates-card">
-                <%= cl_image_tag profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <%= link_to profile.username, profile_path(profile) %>
-              </div>
+                <%= link_to profile_path(profile) do %>
+                  <%= cl_image_tag profile.profile_photo.key, class: "avatar-tripshow" %>
+                <% end %>
               <% else %>
-              <div class="mates-card">
-                <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <%= link_to profile.username, profile_path(profile) %>
-              </div>
+                <%= link_to profile_path(profile) do %>
+                  <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar-tripshow" %>
+                <% end %>
               <% end %>
           <% end %>
           </div>
