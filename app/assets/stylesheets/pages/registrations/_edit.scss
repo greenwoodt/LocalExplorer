@@ -1,0 +1,22 @@
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0px 50px auto;
+}
+
+.sign-up-fill-card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  color: rgb(12, 13, 13);
+}
+.sign-up-form-rest {
+  border-radius: 3px;
+}
+
+.got-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
