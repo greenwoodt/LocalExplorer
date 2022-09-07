@@ -7,9 +7,9 @@
         <p>Be local anywhere</p>
     <div class="landing-page-parent">
       <div class="landing-page-buttons">
-        <%= link_to "Login", new_user_session_path, class: "btn btn-success", id: "test-test" %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-success test-test" %>
           <br>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success", id: "test-test"%>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success test-test"%>
       </div>
     </div>
     <% elsif user_signed_in? && current_user.profile == nil%>
@@ -31,8 +31,8 @@
     </div>
     <div class="landing-page-parent">
       <div class="landing-page-buttons">
-        <%= link_to "Available trips", trips_path, class: "btn btn-success", id: "test-test"%>
-        <%= link_to "Create a trip", new_trip_path, class: "btn btn-success", id: "test-test"%>
+        <%= link_to "Available trips", trips_path, class: "btn btn-success  test-test"%>
+        <%= link_to "Create a trip", new_trip_path, class: "btn btn-success test-test"%>
       </div>
     </div>
   </div>
