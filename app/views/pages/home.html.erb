@@ -14,8 +14,8 @@
     </div>
     <% elsif user_signed_in? && current_user.profile == nil%>
       <br>
-      <p>So excited to have you with us! Please create a Profile first!</p>
-      <%= link_to "Create a Profile", new_profile_path, class: "btn btn-success"%>
+      <h1 style="margin: 30px;">So excited to have you with us! Please create a Profile first!</h1>
+      <%= link_to "Create a Profile", new_profile_path, class: "btn btn-success test-test"%>
     <% else %>
     <h1>Lets start your adventure!</h1>
      <div class="landing-searchbar">
