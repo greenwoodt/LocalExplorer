@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+Review.destroy_all
+Category.destroy_all
+User.destroy_all
+Profile.destroy_all
+Trip.destroy_all
+Chatroom.destroy_all
+
+
 #Category
 category1 = Category.new(name: "Hike")
 category1.save!
