@@ -1,99 +1,101 @@
-<div class="banner-none" id="banner-profile-show">
-  <div class="card-profile">
-      <div class="card-profile-infos w-100">
-        <div class="card-profile-user">
-          <%if @profile.profile_photo.attached? %>
-            <%= cl_image_tag @profile.profile_photo.key, class: "avatar-profile-show"%>
-            <% else %>
-            <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar-profile-show"%>
-          <% end %>
-          <div class="card-profile-fullname">
-            <h2><%= @profile.username %></h2>
-            <h5><%= @profile.first_name %> <%  %> <%= @profile.last_name%></h5>
-            <%if @profile.front_driver_license.attached? && @profile.back_driver_license.attached? %>
-              <p>Driver license is verified</p>
-            <% else %>
-              <p>Driver license is not verified</p>
+<div class="body-overall-container">
+  <div class="banner-none" id="banner-profile-show">
+    <div class="card-profile">
+        <div class="card-profile-infos w-100">
+          <div class="card-profile-user">
+            <%if @profile.profile_photo.attached? %>
+              <%= cl_image_tag @profile.profile_photo.key, class: "avatar-profile-show"%>
+              <% else %>
+              <%= image_tag "https://www.slotcharter.net/wp-content/uploads/2020/02/no-avatar.png", class: "avatar-profile-show"%>
             <% end %>
+            <div class="card-profile-fullname">
+              <h2><%= @profile.username %></h2>
+              <h5><%= @profile.first_name %> <%  %> <%= @profile.last_name%></h5>
+              <%if @profile.front_driver_license.attached? && @profile.back_driver_license.attached? %>
+                <p>Driver license is verified</p>
+              <% else %>
+                <p>Driver license is not verified</p>
+              <% end %>
+            </div>
           </div>
+
+          <p><%= @profile.description %></p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container-profile-comment">
+      <div>
+        <h5>Reviews: </h5>
+      </div>
+        <% if @profile.user.received_bookings.map { |booking| booking.review }.select { |r| !r.nil?} == [] %>
+          <p>No reviews yet</p>
+        <% else %>
+        <% @reviews.each do |review| %>
+            <div><p><%= review.comment %><span class ="profile-show-reviews-user">   - by <%= link_to review.booking.user.profile.username, profile_path(review.booking.user.profile.id) %></span></p></div>
+          <% end %>
+        <% end %>
+      </div>
+
+        <% if @booking && current_user != @profile.user %>
+          <div class="container-profile-comment-input">
+            <%= simple_form_for([@booking, @review]) do |f| %>
+            <%= f.input :comment, label: "Leave your comment here:", input_html: {class: "comment-imput-field"} %>
+            <%= f.button :submit, class: "btn btn-success" %>
+        <% end %>
+        </div>
+        <% end %>
+
+
+    <%# <h2><%= pluralize @booking.user.profile.reviews.size, "review" %></h2>
+
+
+
+    <% if current_user == @profile.user %>
+      <div class="card-profile-tabs">
+        <div class="profile-wrap">
+          <% if policy(@profile).edit? %>
+          <%= link_to "Update profile", edit_profile_path, class: "btn btn-success" %>
+          <% end %>
         </div>
 
-        <p><%= @profile.description %></p>
+        <div class="profile-wrap">
+          <% if policy(@profile).destroy? %>
+          <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-success"%>
+          <% end %>
+        </div>
+
+        <div class="profile-wrap">
+          <% if policy(@profile).destroy? %>
+          <%= link_to "Create a trip", new_trip_path, class: "btn btn-success"%>
+          <% end %>
+        </div>
+
+        <div class="profile-wrap">
+          <% if policy(@profile).destroy? %>
+          <%= link_to "View the trips", trips_path, class: "btn btn-success" %>
+          <% end %>
+        </div>
+
+        <div class="profile-wrap">
+          <% if policy(@profile).destroy? %>
+          <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id)), class: "btn btn-success"%>
+          <% end %>
+        </div>
+
+        <div class="profile-wrap">
+          <% if policy(@profile).destroy? %>
+          <%= link_to 'My Bookings', bookings_path(@booking), class: "btn btn-success" %>
+          <% end %>
+        <div>
       </div>
-  </div>
-
-  <br>
-
-   <div class="container-profile-comment">
-    <div>
-      <h5>Reviews: </h5>
+    <% end %>
+    <div class="btn btn-success float-button1">
+      <%= link_to " + Create a trip", new_trip_path %>
     </div>
-      <% if @profile.user.received_bookings.map { |booking| booking.review }.select { |r| !r.nil?} == [] %>
-        <p>No reviews yet</p>
-      <% else %>
-       <% @reviews.each do |review| %>
-          <div><p><%= review.comment %><span class ="profile-show-reviews-user">   - by <%= link_to review.booking.user.profile.username, profile_path(review.booking.user.profile.id) %></span></p></div>
-        <% end %>
-      <% end %>
+    <div class="btn btn-success float-button">
+      <%= link_to "Back to trips", trips_path %>
     </div>
-
-      <% if @booking && current_user != @profile.user %>
-        <div class="container-profile-comment-input">
-          <%= simple_form_for([@booking, @review]) do |f| %>
-          <%= f.input :comment, label: "Leave your comment here:", input_html: {class: "comment-imput-field"} %>
-          <%= f.button :submit, class: "btn btn-success" %>
-      <% end %>
-       </div>
-      <% end %>
-
-
-  <%# <h2><%= pluralize @booking.user.profile.reviews.size, "review" %></h2>
-
-
-
-  <% if current_user == @profile.user %>
-    <div class="card-profile-tabs">
-      <div class="profile-wrap">
-        <% if policy(@profile).edit? %>
-        <%= link_to "Update profile", edit_profile_path, class: "btn btn-success" %>
-        <% end %>
-      </div>
-
-      <div class="profile-wrap">
-        <% if policy(@profile).destroy? %>
-        <%= link_to "Delete profile", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-success"%>
-        <% end %>
-      </div>
-
-      <div class="profile-wrap">
-        <% if policy(@profile).destroy? %>
-        <%= link_to "Create a trip", new_trip_path, class: "btn btn-success"%>
-        <% end %>
-      </div>
-
-      <div class="profile-wrap">
-        <% if policy(@profile).destroy? %>
-        <%= link_to "View the trips", trips_path, class: "btn btn-success" %>
-        <% end %>
-      </div>
-
-      <div class="profile-wrap">
-        <% if policy(@profile).destroy? %>
-        <%= link_to "View my trips", trips_path(Trip.where("user_id = :query", query: current_user.id)), class: "btn btn-success"%>
-        <% end %>
-      </div>
-
-      <div class="profile-wrap">
-        <% if policy(@profile).destroy? %>
-        <%= link_to 'My Bookings', bookings_path(@booking), class: "btn btn-success" %>
-        <% end %>
-      <div>
-    </div>
-  <% end %>
-  <div class="btn btn-success float-button1">
-    <%= link_to " + Create a trip", new_trip_path %>
-  </div>
-   <div class="btn btn-success float-button">
-    <%= link_to "Back to trips", trips_path %>
   </div>
 </div>
