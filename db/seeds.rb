@@ -48,8 +48,8 @@ profile1 = Profile.new(username: "Alice_in_wonderland", first_name: "Alice", las
 profile1.profile_photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/108298160?v=4'), filename: 'alice.jpg')
 profile1.save!
 
-profile2 = Profile.new(username: "Tibo_the_Brain", first_name: "Thibault", last_name: "Paulmann", description: "I am the brain I am the man", user: user2)
-profile2.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657608771/tzale9h9jj48xgmc6ya5.jpg'), filename: 'Tibo.jpg')
+profile2 = Profile.new(username: "Tibo_the_Brain", first_name: "Thibault", last_name: "Paulmann", description: "I am the brain I am the code", user: user2)
+profile2.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657608771/tzale9h9jj48xgmc6ya5.jpg'), filename: 'Tibo.jpg') 
 profile2.save!
 
 profile3 = Profile.new(username: "Maya_Bee", first_name: "Maya", last_name: "Eyal", description: "Do you want to go to the Malaysian place?", user: user3)

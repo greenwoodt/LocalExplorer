@@ -1,7 +1,7 @@
 <div class=" navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <div class= "nav-logo"><%= image_tag "greenlogonew.png" %>
+      <div class= "nav-logo"><%= image_tag "mountain_logo.png" %>
       </div>
     <% end %>
 
@@ -14,11 +14,13 @@
         <% if user_signed_in? %>
           <%# <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
-          <%# </li>
-          <li class="nav-item"> %>
+          <%# <%# </li> %>
+          <%# <li class="nav-item"> %>
             <%# <%= link_to "Messages", "#", class: "nav-link" %>
-          <%# </li> %>
-          <%# <%= current_user.profile.username, class: "navbar-username"%>
+            <div style="vertical-align: middle; margin-top: 12px; margin-right: 15px; color: #3a5a40">
+            <%= current_user.profile.username %>
+            </div>
+        
           <li class="nav-item dropdown">
             <% if current_user.profile&.profile_photo&.attached? %>
               <%= cl_image_tag current_user.profile.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
