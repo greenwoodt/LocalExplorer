@@ -4,6 +4,10 @@ class TripPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
+    def resolve_my_trips
+      scope.where(user: user)
+    end
   end
 
   def index?
@@ -13,6 +17,11 @@ class TripPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def my_trips?
+    true
+  end
+
 
   def create?
     true
@@ -25,4 +34,5 @@ class TripPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
 end
