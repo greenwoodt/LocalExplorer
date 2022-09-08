@@ -1,5 +1,5 @@
     
-.body-overall-container h2 {
+.heading-my-trips {
     padding: 50px 50px 20px;
     margin-left: 40%;  
 }

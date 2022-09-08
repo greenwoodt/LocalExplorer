@@ -1,5 +1,7 @@
 <div class="body-overall-container">
-<h2>My Trips</h2>
+    <div class="heading-my-trips">
+        <h2>My Trips</h2>
+    </div>
     <div class="container-trip-index-cards-mytrips">
         <% if current_user.profile != nil %>
             <% current_user.trips.each do |trip|  %>
