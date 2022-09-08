@@ -42,11 +42,10 @@
     <div class="card-showtrip-info">
         <h1><%= @trip.name %></h1>
          <%= simple_form_for [@trip, @booking] do |f| %>
-                      <div class="form-actions-trip-show">
-                        <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
-                      </div>
-                    <% end %>
-        <br>
+            <div class="form-actions-trip-show">
+              <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
+            </div>
+            <% end %>
         <div class="info">
         <p>Start Date:</p>
         <%= @trip.start_date.strftime("%d/%m/%Y")  %>
@@ -73,15 +72,14 @@
         </div>
 
         <div class="info">
-        <p>Description:</p>
-        <%= @trip.description %>
-        </div>
-
-        <div class="info">
         <p>Estimated fuel price:</p>
         <%= humanized_money_with_symbol(@trip.price_cents) %>
     </div>
      </div>
+     <div class="info" style="margin: 0px auto;padding: 0px 100px 0px 21px;">
+        <p>Description:</p>
+        <%= @trip.description %>
+        </div>
         <div class="info-flex", style="display: flex; gap: 5px;">
             <% if  current_user.profile != nil%>
               <% if current_user.id != @trip.user.id %>
