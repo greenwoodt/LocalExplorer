@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
   def index
     @trips = policy_scope(Trip)
-    @trips = @trips.near(params[:query]) if params[:query].present?
+    @trips = @trips.near(params[:query], 300) if params[:query].present?
 
     # @trips = @trips.near(params[:query], 10) the 10 is km
     # The `geocoded` scope filters only trips with coordinates
