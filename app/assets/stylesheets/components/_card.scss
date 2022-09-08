@@ -166,11 +166,7 @@
 }
 
 
-
-
 // trip show page
-
-
 
 .card-showtrip {
   background-color: white;
@@ -215,7 +211,12 @@
   width: fit-content;
   height: fit-content;
   padding: 5px;
+  i {
+    width: 30px;
+    height: 30px;
+  }
 }
+
 
 
 .card-profiles-showtrip {
@@ -321,7 +322,27 @@
   flex-direction: column;
 }
 
-
+// trips show icons
+.fa-trash-can {
+font-size: 28px;
+}
+.fa-pen-to-square {
+font-size: 28px;
+margin-right: 10px;
+margin-left: 5px;
+}
+.info-flex {
+  justify-content: flex-end;
+  margin-right: 25px;
+  margin-block: 15px;
+}
+.form-actions-trip-show {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7px;
+  margin-top: 6px;
+}
+// trips show icons end
 
 .dashboard-showtrip {
   height: fit-content;
