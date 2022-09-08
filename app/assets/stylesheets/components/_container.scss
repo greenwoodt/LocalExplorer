@@ -117,12 +117,12 @@ body {
 
 .container-trip-index-cards-mytrips {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 60%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   flex-wrap: wrap;
   width: fit-content;
   align-content: center;
+  padding: 0px 41px;
 }
 
 
