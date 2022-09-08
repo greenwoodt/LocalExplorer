@@ -31,13 +31,9 @@
       </div>
       <br>
     <% if @trip.user == current_user && @chatroom %>
-      <%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
+      <%= link_to 'Open chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
     <% end %>
-
-
-
     </div>
-
 <div class="container-showtrip">
   <div class="card-showtrip">
     <% if @trip.photo.attached? %>
@@ -52,14 +48,16 @@
         <%= @trip.start_date.strftime("%d/%m/%Y")  %>
         </div>
 
-        <div class="info">
-        <p>End Date:</p>
-        <%= @trip.end_date.strftime("%d/%m/%Y")  %>
-        </div>
+
 
         <div class="info">
         <p>Category:</p>
         <%= @trip.category.name %>
+        </div>
+
+           <div class="info">
+        <p>End Date:</p>
+        <%= @trip.end_date.strftime("%d/%m/%Y")  %>
         </div>
 
         <div class="info">
@@ -82,27 +80,27 @@
         <%= humanized_money_with_symbol(@trip.price_cents) %>
         </div>
         <div class="info-flex", style="display: flex; gap: 5px;">
-        <% if  current_user.profile != nil%>
-          <% if current_user.id != @trip.user.id %>
-            <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
-              <% if @trip.capacity > @trip.bookings.count %>
-                <%= simple_form_for [@trip, @booking] do |f| %>
-                  <div class="form-actions">
-                    <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
-                  </div>
+            <% if  current_user.profile != nil%>
+              <% if current_user.id != @trip.user.id %>
+                <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
+                  <% if @trip.capacity > @trip.bookings.count %>
+                    <%= simple_form_for [@trip, @booking] do |f| %>
+                      <div class="form-actions">
+                        <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
+                      </div>
+                    <% end %>
+                  <% end %>
                 <% end %>
               <% end %>
-            <% end %>
-          <% end %>
-          <% else %>
-            <%= link_to "Add Profile to book", new_profile_path, :class => "btn btn-success" %>
+            <% else %>
+          <%= link_to "Add Profile to book", new_profile_path, :class => "btn btn-success" %>
         <% end %>
           <% if policy(@trip).edit? %>
-            <%= link_to "Update trip", edit_trip_path, :class => "btn btn-success"  %>
+            <%= link_to "Update", edit_trip_path, :class => "btn btn-success"  %>
           <% end %>
 
           <% if policy(@trip).destroy? %>
-            <%= link_to "Delete trip", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-success" %>
+            <%= link_to "Delete", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-success" %>
           <% end %>
           <div class="btn btn-success">
             <%= link_to "Back to Trips", trips_path %>
