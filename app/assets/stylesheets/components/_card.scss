@@ -333,7 +333,14 @@ margin-left: 5px;
 }
 .info-flex {
   justify-content: flex-end;
-  margin-right: 16px;
+  margin-right: 25px;
+  margin-block: 15px;
+}
+.form-actions-trip-show {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7px;
+  margin-top: 6px;
 }
 // trips show icons end
 
