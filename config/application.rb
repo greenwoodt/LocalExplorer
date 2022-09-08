@@ -18,6 +18,8 @@ module LocalExplorer
 
     config.assets.paths << "#{Rails.root}/app/assets/videos"
     # Configuration for the application, engines, and railties goes here.
+    # Rails.configuration.time_zone = "UTC+2"
+    config.time_zone = 'Europe/Paris'
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.

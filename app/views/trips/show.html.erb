@@ -41,11 +41,21 @@
     <% end %>
     <div class="card-showtrip-info">
         <h1><%= @trip.name %></h1>
-         <%= simple_form_for [@trip, @booking] do |f| %>
-            <div class="form-actions-trip-show">
-              <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
-            </div>
-            <% end %>
+         <% if current_user.profile != nil%>
+              <% if current_user.id != @trip.user.id %>
+                <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
+                  <% if @trip.capacity > @trip.bookings.count %>
+                    <%= simple_form_for [@trip, @booking] do |f| %>
+                      <div class="form-actions-trip-show">
+                        <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
+                      </div>
+                    <% end %>
+                 <% end %>
+                <% end %>
+              <% end %>
+            <% else %>
+          <%= link_to "Add Profile to book", new_profile_path, :class => "btn btn-success" %>
+        <% end %>
         <div class="info">
         <p>Start Date:</p>
         <%= @trip.start_date.strftime("%d/%m/%Y")  %>
@@ -81,16 +91,8 @@
         <%= @trip.description %>
         </div>
         <div class="info-flex", style="display: flex; gap: 5px;">
-            <% if  current_user.profile != nil%>
-              <% if current_user.id != @trip.user.id %>
-                <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
-                  <% if @trip.capacity > @trip.bookings.count %>
-                  <% end %>
-                <% end %>
-              <% end %>
-            <% else %>
-          <%= link_to "Add Profile to book", new_profile_path, :class => "btn btn-success" %>
-        <% end %>
+
+
           <% if policy(@trip).edit? %>
             <%= link_to edit_trip_path do %>
               <i class="fa-solid fa-pen-to-square"></i>
