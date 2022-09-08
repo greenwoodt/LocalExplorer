@@ -166,11 +166,7 @@
 }
 
 
-
-
 // trip show page
-
-
 
 .card-showtrip {
   background-color: white;
@@ -326,7 +322,20 @@
   flex-direction: column;
 }
 
-
+// trips show icons
+.fa-trash-can {
+font-size: 28px;
+}
+.fa-pen-to-square {
+font-size: 28px;
+margin-right: 10px;
+margin-left: 5px;
+}
+.info-flex {
+  justify-content: flex-end;
+  margin-right: 16px;
+}
+// trips show icons end
 
 .dashboard-showtrip {
   height: fit-content;

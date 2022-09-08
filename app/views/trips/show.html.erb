@@ -31,7 +31,7 @@
       </div>
       <br>
     <% if @trip.user == current_user && @chatroom %>
-      <%= link_to 'Chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
+      <%= link_to 'Open Chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
     <% end %>
     </div>
 <div class="container-showtrip">
@@ -40,15 +40,17 @@
       <%= cl_image_tag @trip.photo.key%>
     <% end %>
     <div class="card-showtrip-info">
-
         <h1><%= @trip.name %></h1>
+         <%= simple_form_for [@trip, @booking] do |f| %>
+                      <div class="form-actions">
+                        <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
+                      </div>
+                    <% end %>
         <br>
         <div class="info">
         <p>Start Date:</p>
         <%= @trip.start_date.strftime("%d/%m/%Y")  %>
         </div>
-
-
 
         <div class="info">
         <p>Category:</p>
@@ -84,11 +86,7 @@
               <% if current_user.id != @trip.user.id %>
                 <% if @trip.bookings.map {|b| b.user_id}.exclude?(current_user.id) %>
                   <% if @trip.capacity > @trip.bookings.count %>
-                    <%= simple_form_for [@trip, @booking] do |f| %>
-                      <div class="form-actions">
-                        <%= f.button :submit, :value => "Join us!", :class => "btn btn-success"  %>
-                      </div>
-                    <% end %>
+
                   <% end %>
                 <% end %>
               <% end %>
