@@ -115,6 +115,17 @@ body {
   align-content: center;
 }
 
+.container-trip-index-cards-mytrips {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 60%;
+  grid-gap: 20px;
+  flex-wrap: wrap;
+  width: fit-content;
+  align-content: center;
+}
+
+
 // Smallest device
 @media (min-width: 7rem) and (max-width: 36rem) {
   .container-trip-index-cards {

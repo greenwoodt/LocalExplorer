@@ -124,7 +124,7 @@ trip5 = Trip.new(name: "Gam del Bisbe", description: "Attention! This is only fo
 trip5.photo.attach(io: URI.open('https://gdm.cat/sites/default/files/2020-03/Gam%20del%20Bisbe%202.jpeg'), filename: 'climb.jpg')
 trip5.save!
 
-trip6 = Trip.new(name: "Andorra", description: "Who wants to go Skiing or snowboarding with me over the weekend in Andorra? Be warned we go fast! ;) In case you don't have a right aquipment no worries, we can stop by a renting office and get you one. We will check the prices for that in advance while planning. I'm quite flexible for the routes we could take, but I know some exeptional places with greatest views!", capacity: 3, price_cents: 50 , category: category2, difficulty: "Hard", start_date: "03.12.2022", end_date: "04.12.2022", user: user7, address: "Andorra")
+trip6 = Trip.new(name: "Andorra", description: "I am organizing this trip to skiing with me over the weekend in Andorra. Need fun, adventures people to join. Be warned we go fast! ;) In case you don't have a right aquipment no worries, we can stop by a renting office and get you one. We will check the prices for that in advance while planning. I'm quite flexible for the routes we could take, but I know some exeptional places with greatest views!", capacity: 3, price_cents: 50 , category: category2, difficulty: "Hard", start_date: "03.12.2022", end_date: "04.12.2022", user: user7, address: "Andorra")
 trip6.photo.attach(io: URI.open('https://en.ski-france.com/media/cache/gallery_default/5603441-Grandvalira-(Andorra)-ski-area-.jpg'), filename: 'ski.jpg')
 trip6.save!
 
@@ -140,7 +140,7 @@ trip9 = Trip.new(name: "Camino de Ronda", description: "Let's go for a nive swim
 trip9.photo.attach(io: URI.open('https://cdn2.wanderlust.co.uk/media/1422/magazine-calella-de-palafrugell.jpg?anchor=center&mode=crop&width=1920&height=0&format=auto&quality=90&rnd=131480699010000000'), filename: 'Camino.jpg')
 trip9.save!
 
-trip10 = Trip.new(name: "Sendero de la Vinyanova", description: "Hard but super rewarding Mountainbike trail!! Expert mountain bike ride. Good fitness required. Advanced riding skills necessary. Some portions of the Tour may require you to push your bike. The starting point of the Tour is right next to a parking lot. You may have your own bike to be able to join the trip. I have 4 places avaliable in my track! Important: let me know if you may have any tecnical ussues with your bike, so we will take the required equipment to be able to do a quick fix. See you soooooon! ", capacity: 4, price_cents: 20 , category: category5, difficulty: "Hard", start_date: "23.09.2022", end_date: "25.09.2022", user: user7, address: "el Bruc")
+trip10 = Trip.new(name: "Sendero Vinyanova", description: "Hard but super rewarding mountainbike trail! Expert mountain bike ride. Good fitness required. Advanced riding skills necessary. Some portions of the Tour may require you to push your bike. The starting point of the Tour is right next to a parking lot. You may have your own bike to be able to join the trip. I have 4 places avaliable in my track! Important: let me know if you may have any tecnical ussues with your bike, so we will take the required equipment to be able to do a quick fix. See you soooooon! ", capacity: 4, price_cents: 20 , category: category5, difficulty: "Hard", start_date: "23.09.2022", end_date: "25.09.2022", user: user7, address: "el Bruc")
 trip10.photo.attach(io: URI.open('https://www.discovertasmania.com.au/siteassets/experiences/mountain-bike-networks/135403-2.jpg'), filename: 'Vinyanova.jpg')
 trip10.save!
 

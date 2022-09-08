@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # resources :users, only: :show do
   resources :profiles
   # end
-
+ get 'my-trips', to: 'trips#my_trips'
+ 
   resources :trips, only: [:index, :show, :new, :create, :edit, :update] do
   #     # Nested the bookings now before the controller because the two routes are linked. A booking is created after trip.
     resources :bookings, only: [:index, :new, :create, :show, :destroy]

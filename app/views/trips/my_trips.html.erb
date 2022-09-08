@@ -1,0 +1,9 @@
+<div class="body-overall-container">
+    <div class="container-trip-index-cards-mytrips">
+        <% if current_user.profile != nil %>
+            <% current_user.trips.each do |trip|  %>
+                <%= render "trip_index_card", trip: trip %>
+            <%end %>
+        <%end%>
+    </div>
+</div>
