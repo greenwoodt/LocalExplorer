@@ -62,14 +62,14 @@ profile1.front_driver_license.attach(io: URI.open('https://upload.wikimedia.org/
 profile1.back_driver_license.attach(io: URI.open('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/28886/ODL_Eng_Full_Back.jpg'), filename: 'driverlicense_back.jpg')
 profile1.save!
 
-profile2 = Profile.new(username: "Tibo_the_Brain", first_name: "Thibault", last_name: "Paulmann", description: "I am the brain I am the code. A web designer, developer and student living in Catalonia. I love building prototypes, redesigning websites and discovering new
+profile2 = Profile.new(username: "Tibo_the_Brain", first_name: "Thibault", last_name: "Paulmann", description: "I am the brain, I am the code. A web designer, developer and student living in Catalonia. I love building prototypes, redesigning websites and discovering new
   areas while walking my dog around the city.On the weekend I head out and explore the awesomeness that is Spain.", user: user2)
 profile2.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657608771/tzale9h9jj48xgmc6ya5.jpg'), filename: 'Tibo.jpg')
 profile2.front_driver_license.attach(io: URI.open('https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg'), filename: 'driverlicense_front.jpg')
 profile2.back_driver_license.attach(io: URI.open('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/28886/ODL_Eng_Full_Back.jpg'), filename: 'driverlicense_back.jpg')
 profile2.save!
 
-profile3 = Profile.new(username: "Maya_Bee", first_name: "Maya", last_name: "Eyal", description: "I'm a teacher, but when I'm not teaching, I love to explore the world. Definitly a foodie! I love to cook, find new restaurants, dance and I also love meeting new people. Come join me on my trips discovering new locations and their food.", user: user3)
+profile3 = Profile.new(username: "Maya_Bee", first_name: "Maya", last_name: "Eyal", description: "I'm a teacher, but when I'm not teaching, I love to explore the world. Definitely a foodie! I love to cook, find new restaurants, dance and I also love meeting new people. Come join me on my trips discovering new locations and their food.", user: user3)
 profile3.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657478261/plvc6oahkxt41mhtjlku.jpg'), filename: 'Maza.jpg')
 profile3.front_driver_license.attach(io: URI.open('https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg'), filename: 'driverlicense_front.jpg')
 profile3.back_driver_license.attach(io: URI.open('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/28886/ODL_Eng_Full_Back.jpg'), filename: 'driverlicense_back.jpg')
@@ -82,21 +82,21 @@ profile4.back_driver_license.attach(io: URI.open('https://assets.publishing.serv
 profile4.save!
 
 profile5 = Profile.new(username: "Siona_Moon", first_name: "Siona", last_name: "Marlin", description: "Don't try to recognize me by my hair - it changes all the time! City slicker by day. Gardening enthusiast in my free time.
-  An avid believer of the 'Off the beaten path' mentality, so enjoying the journey is just as important as the destination.", user: user5)
+  An avid believer of the 'Off the beaten path' mentality. Enjoying the journey is just as important as the destination.", user: user5)
 profile5.profile_photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/107324630?v=4'), filename: 'Siona.jpg')
 profile5.front_driver_license.attach(io: URI.open('https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg'), filename: 'driverlicense_front.jpg')
 profile5.back_driver_license.attach(io: URI.open('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/28886/ODL_Eng_Full_Back.jpg'), filename: 'driverlicense_back.jpg')
 profile5.save!
 
 profile6 = Profile.new(username: "Nastya_Cheesecake", first_name: "Anastasiya", last_name: "Kostenko", description: "I have a child - his name is Kuzia, my lovely doggo.
-  Dog lover, founder of Local Explorer and I love hiking in the mountains. I'll be your guide to the most adventurous and beautiful spots in our part of Spain. ", user: user6)
+  Dog lover, founder of Local Explorer and lover of mountain hikes. I'll be your guide to the most adventurous and beautiful spots in our part of Spain. ", user: user6)
 profile6.profile_photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657549836/eka2ha3ekdr62mmiqyaz.jpg'), filename: 'Nastya.jpg')
 profile6.front_driver_license.attach(io: URI.open('https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg'), filename: 'driverlicense_front.jpg')
 profile6.back_driver_license.attach(io: URI.open('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/28886/ODL_Eng_Full_Back.jpg'), filename: 'driverlicense_back.jpg')
 profile6.save!
 
 profile7 = Profile.new(username: "Sonja_Hug", first_name: "Sonja", last_name: "Ladenstein", description: "Hyperactive be warned. I'm very sporty and adventurous.
-  I love high adrenaline activities, sharing these experiences, having a good laugh and finding yummy places to eat.", user: user7)
+  I love high adrenaline activities, sharing these experiences and having a good laugh. Finding yummy places to eat is also one of my hobbies.", user: user7)
 profile7.profile_photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/108735489?v=4'), filename: 'Sonja.jpg')
 profile7.front_driver_license.attach(io: URI.open('https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg'), filename: 'driverlicense_front.jpg')
 profile7.back_driver_license.attach(io: URI.open('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/28886/ODL_Eng_Full_Back.jpg'), filename: 'driverlicense_back.jpg')
