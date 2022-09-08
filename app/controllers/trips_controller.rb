@@ -63,6 +63,12 @@ class TripsController < ApplicationController
     redirect_to trips_path, status: :see_other
   end
 
+  def my_trips
+    authorize Trip
+    TripPolicy::Scope.new(current_user, Trip).resolve_my_trips
+    @trips = Trip.where(user: current_user)
+  end
+
   private
 
   def trip_params
