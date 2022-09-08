@@ -4,7 +4,7 @@
       <% @bookings.each do |booking|  %>
       <div class="bookings-index-cards">
       <div class="booking-index-info">
-        <h4><%= booking.trip.name %></h4>
+        <h4><%= link_to booking.trip.name, trip_path(booking.trip.id)%></h4>
         <p><%= booking.trip.start_date.to_date %> to <%= booking.trip.end_date.to_date %></p>
       </div>
       <div id="explorer-title-index-bookings"> <p>Your Explorer</p></div>
