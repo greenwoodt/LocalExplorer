@@ -30,11 +30,11 @@
     <div class="booking-show-buttons-card">
       <ul class="booking-show-inline">
       <li> <%= link_to 'Discover more trips', trips_path(@trip), :class => "btn btn-success" %> </li>
-      <%= link_to 'open chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
+      <%= link_to 'Open chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
       <% if policy(@booking).destroy? %>
     <li><%= link_to "Delete booking", trip_booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-success"%> </li>
       <% end %>
-    <li><%= link_to 'Show my Bookings', bookings_path(@booking), :class => "btn btn-success" %> </li>
+    <li><%= link_to 'Show my bookings', bookings_path(@booking), :class => "btn btn-success" %> </li>
       </ul>
     </div>
   </div>
