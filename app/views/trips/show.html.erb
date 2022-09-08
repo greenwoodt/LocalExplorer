@@ -31,7 +31,7 @@
       </div>
       <br>
     <% if @trip.user == current_user && @chatroom %>
-      <%= link_to 'Open chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
+      <%= link_to 'Chat', chatroom_path(@chatroom), :class => "btn btn-success" %>
     <% end %>
     </div>
 <div class="container-showtrip">
@@ -96,14 +96,19 @@
           <%= link_to "Add Profile to book", new_profile_path, :class => "btn btn-success" %>
         <% end %>
           <% if policy(@trip).edit? %>
-            <%= link_to "Update", edit_trip_path, :class => "btn btn-success"  %>
+            <%= link_to edit_trip_path do %>
+              <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
           <% end %>
-
           <% if policy(@trip).destroy? %>
-            <%= link_to "Delete", trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-success" %>
+            <%= link_to trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
           <% end %>
-          <div class="btn btn-success">
-            <%= link_to "Back to Trips", trips_path %>
+          <div class="btn btn-success float-button-tripshow ">
+            <%= link_to trips_path do %>
+              <i class="fa-solid fa-left-long"></i>
+            <% end %>
           </div>
         </div>
     </div>
