@@ -1,8 +1,15 @@
 <div class="card-trip-index">
   <div class="card-trip-index-header">
-    <%if trip.photo.attached?%>
-      <%= link_to cl_image_tag(trip.photo.key), trip_path(trip.id), height: 200, width: 300, crop: :fill, class: "card-img-top" %>
-    <%end %>
+    <div>
+      <%if trip.photo.attached?%>
+        <%= link_to cl_image_tag(trip.photo.key), trip_path(trip.id), height: 200, width: 300, crop: :fill, class: "card-img-top" %>
+      <%end %>
+    </div>
+     <div>
+      <% if trip.capacity == trip.bookings.count %>
+        <span class="tag-trip-category tag-booked">BOOKED !</span>
+      <% end %>
+    </div>
   </div>
   <div class="card-trip-index-body">
     <div class = "d-flex justify-content-between w-100">
@@ -25,6 +32,7 @@
     <p>
       <%= trip.shortened_description %>
     </p>
+
   </div>
   <div class="user-trip-index">
   <%# <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" /> %>
