@@ -6,7 +6,7 @@
   margin-bottom: 15px;
 }
 #bookings-index-title {
-  margin: 20px;
+  margin: 5px 0px 40px 0px;
   text-align: center;
 }
 .bookings-index-cards {
@@ -28,7 +28,7 @@
   margin: 10px;
 }
 .explorer-card-bookings-index {
-  padding: 6px 20px 6px 20px;
+  padding: 6px 40px 6px 10px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -40,7 +40,7 @@
 
 #explorer-title-index-bookings {
   text-align: center;
-  margin: 10px 0px 1px;
+  margin: 10px 0px 10px;
   font-weight: bold;
 }
 
@@ -57,8 +57,9 @@
   padding: 6px 20px 6px 20px;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  margin: 5px 20px;
+  flex-direction: column;
+  margin: 1px 20px;
+  margin-bottom: 25px;
 }
 
 .bookings-index-links a {
@@ -69,6 +70,7 @@
   border-color: #7f867c;
   margin: 5px;
   border-radius: 5px;
+  text-align: center;
   &:hover {
     background-color: #aeaeae;
     border-color: #aeaeae;
