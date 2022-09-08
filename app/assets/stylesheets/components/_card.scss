@@ -125,11 +125,9 @@
 }
 
 .card-trip-index-body p {
-  display: inline-block;
   font-size: 17px;
   margin: 0 0 40px;
   text-decoration: none;
-  text-overflow: ellipsis;
 }
 .user-trip-index {
   display: flex;
@@ -166,8 +164,6 @@
 .difficulty:hover + p {
   display: block;
 }
-
-
 
 
 
