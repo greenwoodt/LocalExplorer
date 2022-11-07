@@ -1,5 +1,5 @@
 <h2>LocalExplorer</h2>
-
+<body>
     The LocalExplorer is a Rails 7 web application built during the final weeks
     of the summer Le Wagon Full Stack-Web Development bootcamp.
     <br />
@@ -59,3 +59,4 @@
     the app only has seeded trips in that area). Add yourself to a pre-seeded
     Trip which is not full or create a trip using the form which will sit
     permanently within the app.
+    </body>
