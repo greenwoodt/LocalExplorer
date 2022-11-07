@@ -22,6 +22,6 @@ LocalExplorer allows users to search for trips created by 'locals', who are expe
    
 - **Messenger** - A Rails component added which generates a chatroom when users create a booking. This has a dependency on the Trips and Booking model in the application. Reviews - This Rails components, allows users with bookings to create reviews on the user model. These are then updated in the view and index pages of the user profiles (dependant also on a booking creation).
     
-**How to use**
+# How to use
 Create an account (you can use a fake email address and password for ease of use). You can edit your account in the top right hand corner of the drop down. Click available trips to see list of available trips or search within the search bar to be taken to nearby trips NOTE (type Barcelona or Spain as the app only has seeded trips in that area). Add yourself to a pre-seeded Trip which is not full or create a trip using the form which will sit permanently within the app.
     
