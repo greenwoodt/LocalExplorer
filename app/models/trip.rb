@@ -19,9 +19,7 @@ class Trip < ApplicationRecord
 
   def shortened_description
     return description if description.length < 90
-
     without_last_word = description[0..90].match(/(.+) \S+$/)
-
     if without_last_word
       without_last_word[1] + '...'
     else
