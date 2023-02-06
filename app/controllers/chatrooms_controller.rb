@@ -5,7 +5,7 @@ class ChatroomsController < ApplicationController
     if current_user == @chatroom.bookings.last.trip.user
       @booking = @chatroom.bookings.last
     else
-      @booking = current_user.bookings.find {|b| b.chatroom == @chatroom}
+      @booking = current_user.bookings.find { |b| b.chatroom == @chatroom }
     end
     authorize @chatroom
   end
