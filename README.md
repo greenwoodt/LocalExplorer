@@ -1,7 +1,8 @@
 # LocalExplorer
 
-The LocalExplorer is a Rails 7 web application built during the final weeks
-of the summer Le Wagon Full Stack-Web Development bootcamp.
+The LocalExplorer is a Rails 7 web application built during the final weeks of the summer Le Wagon Full Stack-Web Development bootcamp.
+
+Avaliable at www.localexplorer.me (note the SSL certifcate could be expired. The website is still safe to access)
 
 **Overview**
 LocalExplorer allows users to search for trips created by 'locals', who are expert guides for local experiences such as hiking or sightseeing. The platform allows these locals, otherwise known as explorers, to take tourists, who wouldn't have accessible means of transport, booked on a trip, where the means of transport for the trip is normally limited.
