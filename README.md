@@ -2,7 +2,7 @@
 
 The LocalExplorer is a Rails 7 web application built during the final weeks of the summer Le Wagon Full Stack-Web Development bootcamp.
 
-Avaliable at https://localexplorer.herokuapp.com, this application is currently hosted by Heroku.
+Avaliable at https://localexplorer.fly.dev/, hosted by fly.io
 
 **Overview**
 LocalExplorer allows users to search for trips created by 'locals', who are expert guides for local experiences such as hiking or sightseeing. The platform allows these locals, otherwise known as explorers, to take tourists, who wouldn't have accessible means of transport, booked on a trip, where the means of transport for the trip is normally limited.
